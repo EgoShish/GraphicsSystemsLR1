@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsPanelStanki", "GraphicsPanelStanki.csproj", "{97F0FCFC-68DD-4F78-B773-487630E2431E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97F0FCFC-68DD-4F78-B773-487630E2431E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97F0FCFC-68DD-4F78-B773-487630E2431E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97F0FCFC-68DD-4F78-B773-487630E2431E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97F0FCFC-68DD-4F78-B773-487630E2431E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6EF27075-F166-48C4-B828-EDFCC38807BB}
+	EndGlobalSection
+EndGlobal
