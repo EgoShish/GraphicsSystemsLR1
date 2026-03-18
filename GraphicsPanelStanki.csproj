@@ -80,6 +80,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -108,6 +109,39 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bar-chart-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graph-increase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-in %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video-camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video-camera1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
