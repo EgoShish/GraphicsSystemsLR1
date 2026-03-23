@@ -21,6 +21,16 @@ namespace GraphicsPanelStanki
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void GridOfValueButtons2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 
