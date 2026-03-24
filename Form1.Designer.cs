@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.lbl_Axioma = new System.Windows.Forms.Label();
             this.btn_home = new System.Windows.Forms.Button();
             this.btn_monitoring = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@
             this.btn_in = new System.Windows.Forms.Button();
             this.btn_book = new System.Windows.Forms.Button();
             this.btn_camera = new System.Windows.Forms.Button();
-            this.logo_ironmac = new System.Windows.Forms.PictureBox();
+            this.pictureBox_stanki = new System.Windows.Forms.PictureBox();
             this.logo_report = new System.Windows.Forms.Button();
             this.logo_review = new System.Windows.Forms.Button();
             this.logo_monitoring = new System.Windows.Forms.Button();
@@ -80,7 +80,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.btn_cnc = new System.Windows.Forms.Button();
             this.MainGrid = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Header = new System.Windows.Forms.Label();
             this.GridOfGeneralPanel = new System.Windows.Forms.TableLayoutPanel();
             this.GridOfGeneralButtons = new System.Windows.Forms.TableLayoutPanel();
             this.GridOfOtherButtons = new System.Windows.Forms.TableLayoutPanel();
@@ -102,15 +102,15 @@
             this.GridOfValueButtons2 = new System.Windows.Forms.TableLayoutPanel();
             this.ComboBoxes = new System.Windows.Forms.TableLayoutPanel();
             this.GridOfActiveMesseges = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGrid_MachineMessages = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.AxiOMALabel = new System.Windows.Forms.TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.logo_ironmac)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_stanki)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo_Axioma)).BeginInit();
             this.MainGrid.SuspendLayout();
             this.GridOfGeneralPanel.SuspendLayout();
@@ -129,7 +129,7 @@
             this.GridOfValueButtons2.SuspendLayout();
             this.ComboBoxes.SuspendLayout();
             this.GridOfActiveMesseges.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_MachineMessages)).BeginInit();
             this.panel1.SuspendLayout();
             this.AxiOMALabel.SuspendLayout();
             this.SuspendLayout();
@@ -227,6 +227,7 @@
             this.cmbbx_nameOfMachine.Name = "cmbbx_nameOfMachine";
             this.cmbbx_nameOfMachine.Size = new System.Drawing.Size(271, 24);
             this.cmbbx_nameOfMachine.TabIndex = 0;
+            this.cmbbx_nameOfMachine.SelectedIndexChanged += new System.EventHandler(this.cmbbx_nameOfMachine_SelectedIndexChanged);
             // 
             // lbl_view
             // 
@@ -250,6 +251,7 @@
             this.cmbbx_typeOfMachine.Name = "cmbbx_typeOfMachine";
             this.cmbbx_typeOfMachine.Size = new System.Drawing.Size(271, 24);
             this.cmbbx_typeOfMachine.TabIndex = 14;
+            this.cmbbx_typeOfMachine.SelectedIndexChanged += new System.EventHandler(this.cmbbx_typeOfMachine_SelectedIndexChanged);
             // 
             // btn_out
             // 
@@ -299,19 +301,19 @@
             this.btn_camera.UseCompatibleTextRendering = true;
             this.btn_camera.UseVisualStyleBackColor = false;
             // 
-            // logo_ironmac
+            // pictureBox_stanki
             // 
-            this.logo_ironmac.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.logo_ironmac.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.logo_ironmac.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logo_ironmac.Image = global::GraphicsPanelStanki.Properties.Resources.image_2;
-            this.logo_ironmac.InitialImage = null;
-            this.logo_ironmac.Location = new System.Drawing.Point(0, 0);
-            this.logo_ironmac.Name = "logo_ironmac";
-            this.logo_ironmac.Size = new System.Drawing.Size(271, 188);
-            this.logo_ironmac.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logo_ironmac.TabIndex = 15;
-            this.logo_ironmac.TabStop = false;
+            this.pictureBox_stanki.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox_stanki.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_stanki.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox_stanki.Image = global::GraphicsPanelStanki.Properties.Resources.image_2;
+            this.pictureBox_stanki.InitialImage = null;
+            this.pictureBox_stanki.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox_stanki.Name = "pictureBox_stanki";
+            this.pictureBox_stanki.Size = new System.Drawing.Size(271, 188);
+            this.pictureBox_stanki.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_stanki.TabIndex = 15;
+            this.pictureBox_stanki.TabStop = false;
             // 
             // logo_report
             // 
@@ -666,6 +668,7 @@
             this.btn_cnc.Text = "СЧПУ";
             this.btn_cnc.UseCompatibleTextRendering = true;
             this.btn_cnc.UseVisualStyleBackColor = false;
+            this.btn_cnc.Click += new System.EventHandler(this.btn_cnc_Click);
             // 
             // MainGrid
             // 
@@ -673,7 +676,7 @@
             this.MainGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.MainGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.MainGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.MainGrid.Controls.Add(this.label1, 1, 0);
+            this.MainGrid.Controls.Add(this.lbl_Header, 1, 0);
             this.MainGrid.Controls.Add(this.GridOfGeneralPanel, 0, 1);
             this.MainGrid.Controls.Add(this.GridOfOtherButtons, 0, 6);
             this.MainGrid.Controls.Add(this.ShpindelDiagram1, 1, 1);
@@ -698,21 +701,21 @@
             this.MainGrid.Size = new System.Drawing.Size(1398, 794);
             this.MainGrid.TabIndex = 42;
             // 
-            // label1
+            // lbl_Header
             // 
-            this.label1.AutoSize = true;
-            this.MainGrid.SetColumnSpan(this.label1, 2);
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(285, 8);
-            this.label1.Margin = new System.Windows.Forms.Padding(3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1105, 59);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Тут должна отображаться текущая модель станка";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.UseCompatibleTextRendering = true;
+            this.lbl_Header.AutoSize = true;
+            this.MainGrid.SetColumnSpan(this.lbl_Header, 2);
+            this.lbl_Header.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_Header.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_Header.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbl_Header.Location = new System.Drawing.Point(285, 8);
+            this.lbl_Header.Margin = new System.Windows.Forms.Padding(3);
+            this.lbl_Header.Name = "lbl_Header";
+            this.lbl_Header.Size = new System.Drawing.Size(1105, 59);
+            this.lbl_Header.TabIndex = 28;
+            this.lbl_Header.Text = "Тут должна отображаться текущая модель станка";
+            this.lbl_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Header.UseCompatibleTextRendering = true;
             // 
             // GridOfGeneralPanel
             // 
@@ -843,45 +846,45 @@
             // 
             this.chart_LineDiagram.BorderlineColor = System.Drawing.Color.Black;
             this.chart_LineDiagram.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea1.AxisX.MajorGrid.Enabled = false;
-            chartArea1.Name = "ChartArea1";
-            this.chart_LineDiagram.ChartAreas.Add(chartArea1);
+            chartArea3.AxisX.MajorGrid.Enabled = false;
+            chartArea3.Name = "ChartArea1";
+            this.chart_LineDiagram.ChartAreas.Add(chartArea3);
             this.chart_LineDiagram.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Alignment = System.Drawing.StringAlignment.Center;
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend1.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Row;
-            legend1.Name = "Legend1";
-            this.chart_LineDiagram.Legends.Add(legend1);
+            legend3.Alignment = System.Drawing.StringAlignment.Center;
+            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend3.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Row;
+            legend3.Name = "Legend1";
+            this.chart_LineDiagram.Legends.Add(legend3);
             this.chart_LineDiagram.Location = new System.Drawing.Point(3, 85);
             this.chart_LineDiagram.Name = "chart_LineDiagram";
             this.chart_LineDiagram.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series1.EmptyPointStyle.IsValueShownAsLabel = true;
-            series1.Legend = "Legend1";
-            series1.LegendToolTip = "#VALX{N}";
-            series1.Name = "Температура шпинделя, C";
-            series1.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series2.BorderWidth = 2;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Color = System.Drawing.Color.Blue;
-            series2.Legend = "Legend1";
-            series2.Name = "Скорость шпинделя, об/мин";
-            this.chart_LineDiagram.Series.Add(series1);
-            this.chart_LineDiagram.Series.Add(series2);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series5.EmptyPointStyle.IsValueShownAsLabel = true;
+            series5.Legend = "Legend1";
+            series5.LegendToolTip = "#VALX{N}";
+            series5.Name = "Температура шпинделя, C";
+            series5.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series6.BorderWidth = 2;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Color = System.Drawing.Color.Blue;
+            series6.Legend = "Legend1";
+            series6.Name = "Скорость шпинделя, об/мин";
+            this.chart_LineDiagram.Series.Add(series5);
+            this.chart_LineDiagram.Series.Add(series6);
             this.chart_LineDiagram.Size = new System.Drawing.Size(549, 331);
             this.chart_LineDiagram.TabIndex = 0;
             this.chart_LineDiagram.Text = "chart1";
-            title1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
-            title1.Name = "Title1";
-            title1.Text = "обороты";
-            title2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Right;
-            title2.Name = "Title2";
-            title2.Text = "температура";
-            this.chart_LineDiagram.Titles.Add(title1);
-            this.chart_LineDiagram.Titles.Add(title2);
+            title3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
+            title3.Name = "Title1";
+            title3.Text = "обороты";
+            title4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Right;
+            title4.Name = "Title2";
+            title4.Text = "температура";
+            this.chart_LineDiagram.Titles.Add(title3);
+            this.chart_LineDiagram.Titles.Add(title4);
             // 
             // tableLayoutPanel1
             // 
@@ -933,6 +936,7 @@
             this.btn_loadLineDiagram.Text = "Вывод";
             this.btn_loadLineDiagram.UseCompatibleTextRendering = true;
             this.btn_loadLineDiagram.UseVisualStyleBackColor = false;
+            this.btn_loadLineDiagram.Click += new System.EventHandler(this.btn_loadLineDiagram_Click);
             // 
             // cb_dayTime
             // 
@@ -991,34 +995,35 @@
             this.btn_loadColumDiagram.Text = "Вывод";
             this.btn_loadColumDiagram.UseCompatibleTextRendering = true;
             this.btn_loadColumDiagram.UseVisualStyleBackColor = false;
+            this.btn_loadColumDiagram.Click += new System.EventHandler(this.btn_loadColumDiagram_Click);
             // 
             // chart_ColumDiagram
             // 
             this.chart_ColumDiagram.BorderlineColor = System.Drawing.Color.Black;
             this.chart_ColumDiagram.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea2.AxisX.MajorGrid.Enabled = false;
-            chartArea2.AxisY.MajorGrid.Enabled = false;
-            chartArea2.Name = "ChartArea1";
-            this.chart_ColumDiagram.ChartAreas.Add(chartArea2);
+            chartArea4.AxisX.MajorGrid.Enabled = false;
+            chartArea4.AxisY.MajorGrid.Enabled = false;
+            chartArea4.Name = "ChartArea1";
+            this.chart_ColumDiagram.ChartAreas.Add(chartArea4);
             this.chart_ColumDiagram.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Alignment = System.Drawing.StringAlignment.Center;
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend2.Name = "Legend1";
-            this.chart_ColumDiagram.Legends.Add(legend2);
+            legend4.Alignment = System.Drawing.StringAlignment.Center;
+            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend4.Name = "Legend1";
+            this.chart_ColumDiagram.Legends.Add(legend4);
             this.chart_ColumDiagram.Location = new System.Drawing.Point(3, 63);
             this.chart_ColumDiagram.Name = "chart_ColumDiagram";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar;
-            series3.Color = System.Drawing.Color.GreenYellow;
-            series3.Legend = "Legend1";
-            series3.Name = "Нормальная температура";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar;
-            series4.Color = System.Drawing.Color.Red;
-            series4.Legend = "Legend1";
-            series4.Name = "Критическая температура";
-            this.chart_ColumDiagram.Series.Add(series3);
-            this.chart_ColumDiagram.Series.Add(series4);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar;
+            series7.Color = System.Drawing.Color.GreenYellow;
+            series7.Legend = "Legend1";
+            series7.Name = "Нормальная температура";
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar;
+            series8.Color = System.Drawing.Color.Red;
+            series8.Legend = "Legend1";
+            series8.Name = "Критическая температура";
+            this.chart_ColumDiagram.Series.Add(series7);
+            this.chart_ColumDiagram.Series.Add(series8);
             this.chart_ColumDiagram.Size = new System.Drawing.Size(549, 174);
             this.chart_ColumDiagram.TabIndex = 0;
             this.chart_ColumDiagram.Text = "chart2";
@@ -1114,7 +1119,7 @@
             // 
             this.GridOfActiveMesseges.ColumnCount = 1;
             this.GridOfActiveMesseges.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.GridOfActiveMesseges.Controls.Add(this.dataGridView1, 0, 1);
+            this.GridOfActiveMesseges.Controls.Add(this.dataGrid_MachineMessages, 0, 1);
             this.GridOfActiveMesseges.Controls.Add(this.lbl_actv_messg, 0, 0);
             this.GridOfActiveMesseges.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridOfActiveMesseges.Location = new System.Drawing.Point(837, 339);
@@ -1127,25 +1132,34 @@
             this.GridOfActiveMesseges.Size = new System.Drawing.Size(556, 450);
             this.GridOfActiveMesseges.TabIndex = 12;
             // 
-            // dataGridView1
+            // dataGrid_MachineMessages
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGrid_MachineMessages.AllowUserToAddRows = false;
+            this.dataGrid_MachineMessages.AllowUserToDeleteRows = false;
+            this.dataGrid_MachineMessages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_MachineMessages.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
             this.DataName,
             this.Status,
             this.Value,
-            this.Description,
-            this.ID});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 70);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(550, 377);
-            this.dataGridView1.TabIndex = 7;
+            this.Description});
+            this.dataGrid_MachineMessages.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGrid_MachineMessages.Location = new System.Drawing.Point(3, 70);
+            this.dataGrid_MachineMessages.Name = "dataGrid_MachineMessages";
+            this.dataGrid_MachineMessages.RowHeadersVisible = false;
+            this.dataGrid_MachineMessages.RowHeadersWidth = 51;
+            this.dataGrid_MachineMessages.RowTemplate.Height = 24;
+            this.dataGrid_MachineMessages.Size = new System.Drawing.Size(550, 377);
+            this.dataGrid_MachineMessages.TabIndex = 7;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id_ms";
+            this.ID.HeaderText = "ColumnNotVisible";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
+            this.ID.Width = 125;
             // 
             // DataName
             // 
@@ -1182,18 +1196,9 @@
             this.Description.MinimumWidth = 10;
             this.Description.Name = "Description";
             // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ID.DataPropertyName = "id";
-            this.ID.HeaderText = "ColumnNotVisible";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.Visible = false;
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.logo_ironmac);
+            this.panel1.Controls.Add(this.pictureBox_stanki);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(8, 483);
             this.panel1.Name = "panel1";
@@ -1228,7 +1233,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.logo_ironmac)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_stanki)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo_Axioma)).EndInit();
             this.MainGrid.ResumeLayout(false);
             this.MainGrid.PerformLayout();
@@ -1254,7 +1259,7 @@
             this.ComboBoxes.PerformLayout();
             this.GridOfActiveMesseges.ResumeLayout(false);
             this.GridOfActiveMesseges.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_MachineMessages)).EndInit();
             this.panel1.ResumeLayout(false);
             this.AxiOMALabel.ResumeLayout(false);
             this.AxiOMALabel.PerformLayout();
@@ -1277,7 +1282,7 @@
         private System.Windows.Forms.ComboBox cmbbx_nameOfMachine;
         private System.Windows.Forms.Label lbl_view;
         private System.Windows.Forms.ComboBox cmbbx_typeOfMachine;
-        private System.Windows.Forms.PictureBox logo_ironmac;
+        private System.Windows.Forms.PictureBox pictureBox_stanki;
         private System.Windows.Forms.Button btn_camera;
         private System.Windows.Forms.Button btn_book;
         private System.Windows.Forms.Button btn_in;
@@ -1317,12 +1322,7 @@
         private System.Windows.Forms.TableLayoutPanel GridOfValueButtons2;
         private System.Windows.Forms.TableLayoutPanel ComboBoxes;
         private System.Windows.Forms.TableLayoutPanel GridOfActiveMesseges;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Value;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridView dataGrid_MachineMessages;
         private System.Windows.Forms.TableLayoutPanel otherBtns1;
         private System.Windows.Forms.TableLayoutPanel otherBtns2;
         private System.Windows.Forms.TableLayoutPanel AxiOMALabel;
@@ -1334,7 +1334,12 @@
         private System.Windows.Forms.ComboBox cb_dayTime;
         private System.Windows.Forms.ComboBox cb_timeTo;
         private System.Windows.Forms.ComboBox cb_timeFrom;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_Header;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Value;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
     }
 }
 

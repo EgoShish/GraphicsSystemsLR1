@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `stankidb` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `stankidb`;
 -- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: stankidb
@@ -55,6 +57,7 @@ CREATE TABLE `machine_names` (
   `id_mn` int NOT NULL AUTO_INCREMENT,
   `name` tinytext,
   `manufacturer` tinytext,
+  `image` tinytext,
   `id_mt` int DEFAULT NULL,
   PRIMARY KEY (`id_mn`),
   KEY `id_mt_idx` (`id_mt`) /*!80000 INVISIBLE */,
@@ -68,7 +71,7 @@ CREATE TABLE `machine_names` (
 
 LOCK TABLES `machine_names` WRITE;
 /*!40000 ALTER TABLE `machine_names` DISABLE KEYS */;
-INSERT INTO `machine_names` VALUES (1,'VF-2SS','Haas',1),(2,'DMP 70','DMG MORI',1),(3,'C 42 U','Hermle',2),(4,'NLX 2500','DMG MORI',3),(5,'MILL S 400','GF Mikron',4),(6,'FORM P 350','AgieCharmilles',5);
+INSERT INTO `machine_names` VALUES (1,'VF-2SS','Haas','VF-2ss_Haas.jpg',1),(2,'DMP 70','DMG MORI','dmgMori_dmp70.png',1),(3,'C 42 U','Hermle','c_42_u_Hermle.jpg',2),(4,'NLX 2500','DMG MORI','NLX_2500_DMG_MORI.jpg',3),(5,'MILL S 400','GF Mikron','MILL_S_400_Gf_Mikron.jpg',4),(6,'FORM P 350','AgieCharmilles','Form_P_350_AgieCharmless.jpg',5);
 /*!40000 ALTER TABLE `machine_names` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,11 +142,11 @@ UNLOCK TABLES;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GetMachineLoadHistory`(IN target_id INT)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetMachineLoadHistory`(IN target_name tinytext)
 BEGIN
 	SELECT `time`, `temperature`, `rotation`
     FROM `machine_loads`
-    WHERE `id_mn` = target_id
+    WHERE `id_mn` = (SELECT `id_mn` FROM `machine_names` WHERE `name` = target_name LIMIT 1)
     ORDER BY `time` ASC;
 END ;;
 DELIMITER ;
@@ -162,14 +165,14 @@ DELIMITER ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetMachineLoadHistoryByPeriod`(
-    IN target_id INT, 
+    IN target_name tinytext, 
     IN t1 DATETIME, 
     IN t2 DATETIME
 )
 BEGIN
 	SELECT `time`, `temperature`, `rotation`
     FROM `machine_loads`
-    WHERE `id_mn` = target_id 
+    WHERE `id_mn` = (SELECT `id_mn` FROM `machine_names` WHERE `name` = target_name LIMIT 1)
       AND `time` BETWEEN t1 AND t2
     ORDER BY `time` ASC;
 END ;;
@@ -188,11 +191,11 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GetMachineStatusLogs`(IN target_id INT)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetMachineStatusLogs`(IN target_name tinytext)
 BEGIN
-	SELECT `name`, `status`, `value`, `description`
+	SELECT `id_ms`, `name`, `status`, `value`, `description`
     FROM `machine_states`
-    WHERE `id_mn` = target_id
+    WHERE `id_mn` = (SELECT `id_mn` FROM `machine_names` WHERE `name` = target_name LIMIT 1)
     ORDER BY `id_ms` DESC;
 END ;;
 DELIMITER ;
@@ -212,7 +215,29 @@ DELIMITER ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetModelList`()
 BEGIN
-	SELECT `id_mn`, `name` FROM `machine_names`;
+	SELECT `id_mn`, `name`, `manufacturer`, `image` FROM `machine_names`;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `GetModelsByTypeName` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetModelsByTypeName`(IN target_typename tinytext)
+BEGIN
+	SELECT `name`, `manufacturer`, `image`
+    FROM `machine_names`
+    WHERE `id_mt` = (SELECT `id_mt` FROM `machine_types` WHERE `type` = target_typename LIMIT 1)
+    ORDER BY `name` ASC;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -231,7 +256,7 @@ DELIMITER ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetTypesList`()
 BEGIN
-	SELECT `id_type`, `type_name` FROM `machine_types`;
+	SELECT `id_mt`, `type` FROM `machine_types`;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -248,4 +273,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-03-24 13:45:27
+-- Dump completed on 2026-03-24 20:56:15
