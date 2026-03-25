@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.lbl_Axioma = new System.Windows.Forms.Label();
             this.btn_home = new System.Windows.Forms.Button();
             this.btn_monitoring = new System.Windows.Forms.Button();
@@ -846,45 +847,45 @@
             // 
             this.chart_LineDiagram.BorderlineColor = System.Drawing.Color.Black;
             this.chart_LineDiagram.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea3.AxisX.MajorGrid.Enabled = false;
-            chartArea3.Name = "ChartArea1";
-            this.chart_LineDiagram.ChartAreas.Add(chartArea3);
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.Name = "ChartArea1";
+            this.chart_LineDiagram.ChartAreas.Add(chartArea1);
             this.chart_LineDiagram.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Alignment = System.Drawing.StringAlignment.Center;
-            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend3.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Row;
-            legend3.Name = "Legend1";
-            this.chart_LineDiagram.Legends.Add(legend3);
+            legend1.Alignment = System.Drawing.StringAlignment.Center;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Row;
+            legend1.Name = "Legend1";
+            this.chart_LineDiagram.Legends.Add(legend1);
             this.chart_LineDiagram.Location = new System.Drawing.Point(3, 85);
             this.chart_LineDiagram.Name = "chart_LineDiagram";
             this.chart_LineDiagram.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series5.EmptyPointStyle.IsValueShownAsLabel = true;
-            series5.Legend = "Legend1";
-            series5.LegendToolTip = "#VALX{N}";
-            series5.Name = "Температура шпинделя, C";
-            series5.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series6.BorderWidth = 2;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Color = System.Drawing.Color.Blue;
-            series6.Legend = "Legend1";
-            series6.Name = "Скорость шпинделя, об/мин";
-            this.chart_LineDiagram.Series.Add(series5);
-            this.chart_LineDiagram.Series.Add(series6);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series1.EmptyPointStyle.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.LegendToolTip = "#VALX{N}";
+            series1.Name = "Температура шпинделя, C";
+            series1.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series2.BorderWidth = 2;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Color = System.Drawing.Color.Blue;
+            series2.Legend = "Legend1";
+            series2.Name = "Скорость шпинделя, об/мин";
+            this.chart_LineDiagram.Series.Add(series1);
+            this.chart_LineDiagram.Series.Add(series2);
             this.chart_LineDiagram.Size = new System.Drawing.Size(549, 331);
             this.chart_LineDiagram.TabIndex = 0;
             this.chart_LineDiagram.Text = "chart1";
-            title3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
-            title3.Name = "Title1";
-            title3.Text = "обороты";
-            title4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Right;
-            title4.Name = "Title2";
-            title4.Text = "температура";
-            this.chart_LineDiagram.Titles.Add(title3);
-            this.chart_LineDiagram.Titles.Add(title4);
+            title1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
+            title1.Name = "Title1";
+            title1.Text = "обороты";
+            title2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Right;
+            title2.Name = "Title2";
+            title2.Text = "температура";
+            this.chart_LineDiagram.Titles.Add(title1);
+            this.chart_LineDiagram.Titles.Add(title2);
             // 
             // tableLayoutPanel1
             // 
@@ -909,6 +910,7 @@
             // cb_timeTo
             // 
             this.cb_timeTo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cb_timeTo.FormatString = "T";
             this.cb_timeTo.FormattingEnabled = true;
             this.cb_timeTo.Location = new System.Drawing.Point(284, 8);
             this.cb_timeTo.Name = "cb_timeTo";
@@ -918,6 +920,7 @@
             // cb_timeFrom
             // 
             this.cb_timeFrom.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cb_timeFrom.FormatString = "T";
             this.cb_timeFrom.FormattingEnabled = true;
             this.cb_timeFrom.Location = new System.Drawing.Point(146, 8);
             this.cb_timeFrom.Name = "cb_timeFrom";
@@ -941,6 +944,7 @@
             // cb_dayTime
             // 
             this.cb_dayTime.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cb_dayTime.FormatString = "d";
             this.cb_dayTime.FormattingEnabled = true;
             this.cb_dayTime.Location = new System.Drawing.Point(8, 8);
             this.cb_dayTime.Name = "cb_dayTime";
@@ -1001,29 +1005,35 @@
             // 
             this.chart_ColumDiagram.BorderlineColor = System.Drawing.Color.Black;
             this.chart_ColumDiagram.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea4.AxisX.MajorGrid.Enabled = false;
-            chartArea4.AxisY.MajorGrid.Enabled = false;
-            chartArea4.Name = "ChartArea1";
-            this.chart_ColumDiagram.ChartAreas.Add(chartArea4);
+            chartArea2.AxisX.MajorGrid.Enabled = false;
+            chartArea2.AxisY.MajorGrid.Enabled = false;
+            chartArea2.Name = "ChartArea1";
+            this.chart_ColumDiagram.ChartAreas.Add(chartArea2);
             this.chart_ColumDiagram.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Alignment = System.Drawing.StringAlignment.Center;
-            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend4.Name = "Legend1";
-            this.chart_ColumDiagram.Legends.Add(legend4);
+            legend2.Alignment = System.Drawing.StringAlignment.Center;
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.Name = "Legend1";
+            this.chart_ColumDiagram.Legends.Add(legend2);
             this.chart_ColumDiagram.Location = new System.Drawing.Point(3, 63);
             this.chart_ColumDiagram.Name = "chart_ColumDiagram";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar;
-            series7.Color = System.Drawing.Color.GreenYellow;
-            series7.Legend = "Legend1";
-            series7.Name = "Нормальная температура";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar;
-            series8.Color = System.Drawing.Color.Red;
-            series8.Legend = "Legend1";
-            series8.Name = "Критическая температура";
-            this.chart_ColumDiagram.Series.Add(series7);
-            this.chart_ColumDiagram.Series.Add(series8);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar;
+            series3.Color = System.Drawing.Color.Red;
+            series3.Legend = "Legend1";
+            series3.Name = "Критическая температура";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar;
+            series4.Color = System.Drawing.Color.GreenYellow;
+            series4.Legend = "Legend1";
+            series4.Name = "Нормальная температура";
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar;
+            series5.Color = System.Drawing.Color.DodgerBlue;
+            series5.Legend = "Legend1";
+            series5.Name = "Не рабочая температура";
+            this.chart_ColumDiagram.Series.Add(series3);
+            this.chart_ColumDiagram.Series.Add(series4);
+            this.chart_ColumDiagram.Series.Add(series5);
             this.chart_ColumDiagram.Size = new System.Drawing.Size(549, 174);
             this.chart_ColumDiagram.TabIndex = 0;
             this.chart_ColumDiagram.Text = "chart2";
