@@ -1,0 +1,369 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="GraphicsPanelStanki"
+        Height="850"
+        Width="1450"
+        WindowStartupLocation="CenterScreen"
+        Background="#F3F3F3">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="Foreground" Value="#404040"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Background" Value="#C0C0C0"/>
+            <Setter Property="BorderBrush" Value="#B0B0B0"/>
+        </Style>
+
+        <Style x:Key="AxisButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Background" Value="#C0FFC0"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+        <Style x:Key="BlueButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Background" Value="#A9C9FF"/>
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="#404040"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="5,5,5,-183">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="270"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="115"/>
+        </Grid.RowDefinitions>
+
+        <!-- Логотип -->
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Margin="3"
+                    BorderBrush="#D0D0D0"
+                    BorderThickness="1"
+                    CornerRadius="5">
+                <!--<Image Source="Resources/image_1.png"
+                       Stretch="Uniform"/>-->
+            </Border>
+
+            <Label Grid.Column="1"
+                   Content="АксиОМА&#x0a;Контрол"/>
+        </Grid>
+
+        <!-- Заголовок -->
+        <Border Grid.Row="0"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Margin="3"
+                CornerRadius="5"
+                Background="White"
+                BorderBrush="#DADADA"
+                BorderThickness="1">
+            <Label Content="Тут должна отображаться текущая модель станка"
+                   FontSize="22"
+                   FontWeight="SemiBold"/>
+        </Border>
+
+        <!-- Левая панель меню -->
+        <Grid Grid.Row="1"
+              Grid.Column="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0"
+                    Grid.Column="0"
+                    IsEnabled="False"
+                    Content="⌂"/>
+            <Button Grid.Row="0"
+                    Grid.Column="1"
+                    Content="Главная"/>
+
+            <Button  Grid.Row="1"
+                    Grid.Column="0"
+                    IsEnabled="False"
+                    Content="⚠"/>
+            <Button Name ="Button" Click="MyButton_Click" Grid.Row="1"
+                    Grid.Column="1"
+                    Background="#C0FFFF"
+                    Content="Мониторинг"/>
+
+            <Button Grid.Row="2"
+                    Grid.Column="0"
+                    IsEnabled="False"
+                    Content="📈"/>
+            <Button Grid.Row="2"
+                    Grid.Column="1"
+                    Content="Анализ"/>
+
+            <Button Grid.Row="3"
+                    Grid.Column="0"
+                    IsEnabled="False"
+                    Content="📊"/>
+            <Button Grid.Row="3"
+                    Grid.Column="1"
+                    Content="Отчет"/>
+        </Grid>
+
+        <!-- Верхний левый график -->
+        <Grid Grid.Row="1"
+              Grid.Column="1"
+              Grid.RowSpan="4"
+              Margin="3">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"
+                   Content="График прогрева шпинделя"/>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <ComboBox x:Name ="Box_Click" SelectionChanged="Select" Grid.Column="0" Margin="5">
+                    <ComboBoxItem Content =" jstanok"/>
+                    </ComboBox>
+                <ComboBox Grid.Column="1" Margin="5"/>
+                <ComboBox Grid.Column="2" Margin="5"/>
+                <Button Grid.Column="3"
+                        Margin="5"
+                        Style="{StaticResource BlueButtonStyle}"
+                        Content="Вывод"/>
+            </Grid>
+
+            <Border Grid.Row="2"
+                    Margin="3"
+                    BorderBrush="#A0A0A0"
+                    BorderThickness="1"
+                    Background="White">
+
+                <!-- Вместо WinForms Chart -->
+                <!-- Можно подключить LiveCharts / OxyPlot -->
+                <Grid>
+                    <TextBlock Text="LINE CHART"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="24"
+                               Foreground="#909090"/>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- Правая верхняя панель -->
+        <Grid Grid.Row="1"
+              Grid.Column="2"
+              Margin="3">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"
+                   Content="Текущие значения компонентов"/>
+
+            <!-- Кнопки осей -->
+            <UniformGrid Grid.Row="1"
+                         Columns="6">
+                <Button Style="{StaticResource BlueButtonStyle}" Content="Шпиндель"/>
+                <Button Style="{StaticResource BlueButtonStyle}" Content="Ось X"/>
+                <Button Style="{StaticResource BlueButtonStyle}" Content="Ось Y"/>
+                <Button Style="{StaticResource BlueButtonStyle}" Content="Ось Z"/>
+                <Button Style="{StaticResource BlueButtonStyle}" Content="Ось A"/>
+                <Button Style="{StaticResource BlueButtonStyle}" Content="Ось B"/>
+            </UniformGrid>
+
+            <!-- Системные кнопки -->
+            <UniformGrid Grid.Row="2"
+                         Columns="5">
+                <Button Style="{StaticResource BlueButtonStyle}" Content="Панель оператора"/>
+                <Button Style="{StaticResource BlueButtonStyle}" Content="Станочный пульт"/>
+                <Button Style="{StaticResource BlueButtonStyle}" Content="Технология"/>
+                <Button Style="{StaticResource BlueButtonStyle}" Content="Питание"/>
+                <Button Style="{StaticResource BlueButtonStyle}" Content="СЧПУ"/>
+            </UniformGrid>
+
+            <!-- Активные сообщения -->
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0"
+                       Content="Активные сообщения"/>
+
+                <DataGrid Grid.Row="1"
+                          Margin="3"
+                          AutoGenerateColumns="False"
+                          HeadersVisibility="Column"
+                          IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="80"/>
+                        <DataGridTextColumn Header="DataName" Binding="{Binding DataName}" Width="*"/>
+                        <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="120"/>
+                        <DataGridTextColumn Header="Value" Binding="{Binding Value}" Width="120"/>
+                        <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="2*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+
+        <!-- Комбобоксы + картинка -->
+        <Grid Grid.Row="2"
+              Grid.Column="0"
+              Grid.RowSpan="3"
+              Margin="3">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"
+                   HorizontalContentAlignment="Left"
+                   Content="Тип станка:"/>
+
+            <ComboBox Grid.Row="1"
+                      Margin="3"
+                      x:Name="cmbbx_typeOfMachine"/>
+
+            <Label Grid.Row="2"
+                   HorizontalContentAlignment="Left"
+                   Content="Наименование:"/>
+
+            <ComboBox Grid.Row="3"
+                      Margin="3"
+                      x:Name="cmbbx_nameOfMachine"/>
+
+            <Border Grid.Row="4"
+                    Margin="3"
+                    BorderThickness="1"
+                    BorderBrush="#A0A0A0"
+                    Background="White">
+                <Image x:Name="pictureBox_stanki"
+                       Stretch="Uniform"/>
+            </Border>
+        </Grid>
+
+        <!-- Нижний график -->
+        <Grid Grid.Row="5"
+              Grid.Column="1"
+              Grid.RowSpan="2"
+              Margin="3">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"
+                   Content="График температуры за текущие сутки"/>
+
+            <Border Grid.Row="1"
+                    Margin="3"
+                    BorderBrush="#A0A0A0"
+                    BorderThickness="1"
+                    Background="White">
+                <Grid>
+                    <TextBlock Text="COLUMN CHART"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="24"
+                               Foreground="#909090"/>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="3"
+                        Margin="5"
+                        Style="{StaticResource BlueButtonStyle}"
+                        Content="Вывод"/>
+            </Grid>
+        </Grid>
+
+        <!-- Нижние кнопки -->
+        <Grid Grid.Row="6"
+              Grid.Column="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <UniformGrid Grid.Row="0"
+                         Columns="4">
+                <Button Content="📹"/>
+                <Button Content="📖"/>
+                <Button Content="⮕"/>
+                <Button Content="⮔"/>
+            </UniformGrid>
+
+            <UniformGrid Grid.Row="1"
+                         Columns="7">
+                <Button Style="{StaticResource AxisButtonStyle}" Content="X"/>
+                <Button Style="{StaticResource AxisButtonStyle}" Content="Y"/>
+                <Button Style="{StaticResource AxisButtonStyle}" Content="Z"/>
+                <Button Style="{StaticResource AxisButtonStyle}" Content="A"/>
+                <Button Style="{StaticResource AxisButtonStyle}" Content="B"/>
+                <Button Style="{StaticResource AxisButtonStyle}" Content="C"/>
+                <Button Background="#8080FF"
+                        Foreground="White"
+                        Content="Авто"/>
+            </UniformGrid>
+        </Grid>
+    </Grid>
+</Window>
+
