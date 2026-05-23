@@ -3,9 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Loaded="Window_Loaded"
         mc:Ignorable="d"
         Title="GraphicsPanelStanki"
-        Height="850"
+        SizeToContent="WidthAndHeight"
+        Height="1015"
         Width="1450"
         WindowStartupLocation="CenterScreen"
         Background="#F3F3F3">
@@ -36,7 +38,7 @@
         </Style>
     </Window.Resources>
 
-    <Grid Margin="5,5,5,-183">
+    <Grid Margin="10,10,10,10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="4*"/>
@@ -161,7 +163,7 @@
 
                 <ComboBox x:Name ="Box_Click" SelectionChanged="Select" Grid.Column="0" Margin="5">
                     <ComboBoxItem Content =" jstanok"/>
-                    </ComboBox>
+                </ComboBox>
                 <ComboBox Grid.Column="1" Margin="5"/>
                 <ComboBox Grid.Column="2" Margin="5"/>
                 <Button Grid.Column="3"
@@ -253,8 +255,8 @@
         <!-- Комбобоксы + картинка -->
         <Grid Grid.Row="2"
               Grid.Column="0"
-              Grid.RowSpan="3"
-              Margin="3">
+              Grid.RowSpan="4"
+              Margin="3,3,3,3">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="35"/>
@@ -270,7 +272,14 @@
 
             <ComboBox Grid.Row="1"
                       Margin="3"
-                      x:Name="cmbbx_typeOfMachine"/>
+                      x:Name="cmbbx_typeOfMachine"
+                      VerticalContentAlignment="Center"
+                      SelectionChanged="MyComboBox_SelectionChanged">
+                <ComboBoxItem Content="Параметр 1"/>
+                <ComboBoxItem Content="Параметр 2"/>
+                <ComboBoxItem Content="Параметр 3"/>
+            </ComboBox>
+            
 
             <Label Grid.Row="2"
                    HorizontalContentAlignment="Left"
@@ -281,12 +290,12 @@
                       x:Name="cmbbx_nameOfMachine"/>
 
             <Border Grid.Row="4"
-                    Margin="3"
-                    BorderThickness="1"
+                    Margin="3,3,3,3"
+                    BorderThickness="5"
                     BorderBrush="#A0A0A0"
-                    Background="White">
+                    Background="White" Height="78" VerticalAlignment="Top">
                 <Image x:Name="pictureBox_stanki"
-                       Stretch="Uniform"/>
+                       Stretch="Uniform" Margin="0,0,0,0"/>
             </Border>
         </Grid>
 
