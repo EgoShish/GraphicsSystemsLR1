@@ -26,3 +26,14 @@ D:\For_student\wpf\GraphicsSystemsLR1\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateR
 D:\For_student\wpf\GraphicsSystemsLR1\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
 D:\For_student\wpf\GraphicsSystemsLR1\WpfApp1\obj\Debug\WpfApp1.exe
 D:\For_student\wpf\GraphicsSystemsLR1\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\student.STANKIN\source\repos\GraphicsSystemsLR1\WpfApp1\obj\Debug\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\student.STANKIN\source\repos\GraphicsSystemsLR1\WpfApp1\obj\Debug\MainWindow.baml
+C:\Users\student.STANKIN\source\repos\GraphicsSystemsLR1\WpfApp1\obj\Debug\MainWindow.g.cs
+C:\Users\student.STANKIN\source\repos\GraphicsSystemsLR1\WpfApp1\obj\Debug\App.g.cs
+C:\Users\student.STANKIN\source\repos\GraphicsSystemsLR1\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+C:\Users\student.STANKIN\source\repos\GraphicsSystemsLR1\WpfApp1\obj\Debug\WpfApp1.g.resources
+C:\Users\student.STANKIN\source\repos\GraphicsSystemsLR1\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
+C:\Users\student.STANKIN\source\repos\GraphicsSystemsLR1\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.cache
+C:\Users\student.STANKIN\source\repos\GraphicsSystemsLR1\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
+C:\Users\student.STANKIN\source\repos\GraphicsSystemsLR1\WpfApp1\obj\Debug\WpfApp1.exe
+C:\Users\student.STANKIN\source\repos\GraphicsSystemsLR1\WpfApp1\obj\Debug\WpfApp1.pdb

@@ -32,7 +32,6 @@ namespace WpfApp1
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            // Ваш код из WinForms работает и здесь
             var table = DB.GetTypesList();
             foreach (DataRow t in table.Rows)
             {
