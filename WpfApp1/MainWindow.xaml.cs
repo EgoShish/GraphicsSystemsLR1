@@ -58,18 +58,26 @@ namespace WpfApp1
             }
         }
 
-        private void MyComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void MyComboBox_typeOfMachine_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (cmbbx_typeOfMachine.SelectedItem is ComboBoxItem selectedItem)
+            cmbbx_nameOfMachine.Items.Clear();
+            headerText[0] = cmbbx_typeOfMachine.Text;
+            var table = DB.GetModelsByTypeName(cmbbx_typeOfMachine.Text);
+            foreach (DataRow t in table.Rows)
             {
-                // Значение сохраняется в переменную
-                string selectedParam = selectedItem.Content.ToString();
-
-                // Здесь можно сразу вызвать метод, использующий эту переменную
-                System.Diagnostics.Debug.WriteLine($"Выбрано: {selectedParam}");
+                cmbbx_nameOfMachine.Items.Add(new ItemExtractor
+                {
+                    FullName = t.ItemArray[0].ToString() + " - " + t.ItemArray[1].ToString(),
+                    ClearName = t.ItemArray[0].ToString(),
+                    ImageName = t.ItemArray[2].ToString()
+                });
             }
+            cmbbx_nameOfMachine.SelectedIndex = 0;
         }
 
+        private void cmbbx_nameOfMachine_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
+        }
     }
 }
