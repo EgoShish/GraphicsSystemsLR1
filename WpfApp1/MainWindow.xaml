@@ -83,7 +83,8 @@
                 Background="White"
                 BorderBrush="#DADADA"
                 BorderThickness="1">
-            <Label Content="Тут должна отображаться текущая модель станка"
+            <Label x:Name="lbl_Header"
+                   Content="Тут должна отображаться текущая модель станка"
                    FontSize="22"
                    FontWeight="SemiBold"/>
         </Border>
@@ -295,8 +296,13 @@
                     BorderThickness="5"
                     BorderBrush="#A0A0A0"
                     Background="White" Height="78" VerticalAlignment="Top">
-                <Image x:Name="pictureBox_stanki"
-                       Stretch="Uniform" Margin="0,0,0,0"/>
+                <Image Stretch="Uniform" Margin="0,0,0,0">
+                    <Image.Source>
+                        <Binding ElementName="cmbbx_nameOfMachine" Path="SelectedItem.ImageName">
+                            <Binding.StringFormat>stankiDB/stankiDBpictures/{0}</Binding.StringFormat>
+                        </Binding>
+                    </Image.Source>
+                </Image>
             </Border>
         </Grid>
 

@@ -14,6 +14,7 @@ namespace GraphicsPanelStanki
     {
         private Database DB;
         private string[] headerText;
+        public string ImagePath;
         public Form1()
         {
             InitializeComponent();

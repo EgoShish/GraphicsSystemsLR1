@@ -23,6 +23,7 @@ namespace WpfApp1
     {
         private Database DB;
         private string[] headerText;
+        public string ImagePath;
         public MainWindow()
         {
             InitializeComponent();
@@ -84,7 +85,29 @@ namespace WpfApp1
         }
         private void cmbbx_nameOfMachine_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            headerText[1] = cmbbx_nameOfMachine.SelectedItem.ToString();
+            FillHeader();
+            /*
+            cb_dayTime.Items.Clear();
+            cb_timeFrom.Items.Clear();
+            cb_timeTo.Items.Clear();
+            cb_dayTime.Text = string.Empty;
+            cb_timeFrom.Text = string.Empty;
+            cb_timeTo.Text = string.Empty;
+            */
+            var table = DB.GetMachineLoadHistory(((ItemExtractor)cmbbx_nameOfMachine.SelectedItem).ClearName);
+            foreach (DataRow t in table.Rows)
+            {
+                /*
+                cb_dayTime.Items.Add(t.ItemArray[0]);
+                cb_timeFrom.Items.Add(t.ItemArray[0]);
+                cb_timeTo.Items.Add(t.ItemArray[0]);
+                */
+            }
+        }
+        public void FillHeader()
+        {
+            lbl_Header.Content = string.Join(", ", headerText);
         }
     }
 }
