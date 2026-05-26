@@ -158,5 +158,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="stankiDB\stankiDBpictures\c_42_u_Hermle.jpg" />
+    <Resource Include="stankiDB\stankiDBpictures\dmgMori_dmp70.png" />
+    <Resource Include="stankiDB\stankiDBpictures\Form_P_350_AgieCharmless.jpg" />
+    <Resource Include="stankiDB\stankiDBpictures\MILL_S_400_Gf_Mikron.jpg" />
+    <Resource Include="stankiDB\stankiDBpictures\NLX_2500_DMG_MORI.jpg" />
+    <Resource Include="stankiDB\stankiDBpictures\VF-2ss_Haas.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
