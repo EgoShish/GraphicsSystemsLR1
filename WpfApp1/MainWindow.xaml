@@ -274,10 +274,7 @@
                       Margin="3"
                       x:Name="cmbbx_typeOfMachine"
                       VerticalContentAlignment="Center"
-                      SelectionChanged="MyComboBox_SelectionChanged">
-                <ComboBoxItem Content="Параметр 1"/>
-                <ComboBoxItem Content="Параметр 2"/>
-                <ComboBoxItem Content="Параметр 3"/>
+                      SelectionChanged="MyComboBox1_SelectionChanged">
             </ComboBox>
             
 
@@ -287,7 +284,10 @@
 
             <ComboBox Grid.Row="3"
                       Margin="3"
-                      x:Name="cmbbx_nameOfMachine"/>
+                      x:Name="cmbbx_nameOfMachine"
+                      VerticalContentAlignment="Center"
+                      SelectionChanged="MyComboBox2_SelectionChanged">
+            </ComboBox>
 
             <Border Grid.Row="4"
                     Margin="3,3,3,3"

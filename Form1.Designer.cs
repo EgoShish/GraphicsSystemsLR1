@@ -141,10 +141,10 @@
             this.lbl_Axioma.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_Axioma.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_Axioma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_Axioma.Location = new System.Drawing.Point(88, 3);
-            this.lbl_Axioma.Margin = new System.Windows.Forms.Padding(3);
+            this.lbl_Axioma.Location = new System.Drawing.Point(66, 2);
+            this.lbl_Axioma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbl_Axioma.Name = "lbl_Axioma";
-            this.lbl_Axioma.Size = new System.Drawing.Size(186, 59);
+            this.lbl_Axioma.Size = new System.Drawing.Size(140, 49);
             this.lbl_Axioma.TabIndex = 2;
             this.lbl_Axioma.Text = "АксиОМА\r\nКонтрол\r\n";
             this.lbl_Axioma.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -156,9 +156,10 @@
             this.btn_home.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_home.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_home.Location = new System.Drawing.Point(72, 3);
+            this.btn_home.Location = new System.Drawing.Point(54, 2);
+            this.btn_home.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_home.Name = "btn_home";
-            this.btn_home.Size = new System.Drawing.Size(202, 61);
+            this.btn_home.Size = new System.Drawing.Size(152, 50);
             this.btn_home.TabIndex = 3;
             this.btn_home.Text = "Главная";
             this.btn_home.UseCompatibleTextRendering = true;
@@ -170,9 +171,10 @@
             this.btn_monitoring.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_monitoring.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_monitoring.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_monitoring.Location = new System.Drawing.Point(72, 70);
+            this.btn_monitoring.Location = new System.Drawing.Point(54, 56);
+            this.btn_monitoring.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_monitoring.Name = "btn_monitoring";
-            this.btn_monitoring.Size = new System.Drawing.Size(202, 61);
+            this.btn_monitoring.Size = new System.Drawing.Size(152, 50);
             this.btn_monitoring.TabIndex = 1;
             this.btn_monitoring.Text = "Мониторинг";
             this.btn_monitoring.UseCompatibleTextRendering = true;
@@ -184,9 +186,10 @@
             this.btn_review.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_review.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_review.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_review.Location = new System.Drawing.Point(72, 137);
+            this.btn_review.Location = new System.Drawing.Point(54, 110);
+            this.btn_review.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_review.Name = "btn_review";
-            this.btn_review.Size = new System.Drawing.Size(202, 61);
+            this.btn_review.Size = new System.Drawing.Size(152, 50);
             this.btn_review.TabIndex = 7;
             this.btn_review.Text = "Анализ";
             this.btn_review.UseCompatibleTextRendering = true;
@@ -198,9 +201,10 @@
             this.btn_report.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_report.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_report.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_report.Location = new System.Drawing.Point(72, 204);
+            this.btn_report.Location = new System.Drawing.Point(54, 164);
+            this.btn_report.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_report.Name = "btn_report";
-            this.btn_report.Size = new System.Drawing.Size(202, 62);
+            this.btn_report.Size = new System.Drawing.Size(152, 52);
             this.btn_report.TabIndex = 9;
             this.btn_report.Text = "Отчет";
             this.btn_report.UseCompatibleTextRendering = true;
@@ -212,10 +216,10 @@
             this.lbl_type.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_type.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_type.Location = new System.Drawing.Point(3, 3);
-            this.lbl_type.Margin = new System.Windows.Forms.Padding(3);
+            this.lbl_type.Location = new System.Drawing.Point(2, 2);
+            this.lbl_type.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbl_type.Name = "lbl_type";
-            this.lbl_type.Size = new System.Drawing.Size(271, 29);
+            this.lbl_type.Size = new System.Drawing.Size(204, 24);
             this.lbl_type.TabIndex = 11;
             this.lbl_type.Text = "Тип станка:";
             this.lbl_type.UseCompatibleTextRendering = true;
@@ -224,9 +228,10 @@
             // 
             this.cmbbx_nameOfMachine.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbbx_nameOfMachine.FormattingEnabled = true;
-            this.cmbbx_nameOfMachine.Location = new System.Drawing.Point(3, 108);
+            this.cmbbx_nameOfMachine.Location = new System.Drawing.Point(2, 86);
+            this.cmbbx_nameOfMachine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbbx_nameOfMachine.Name = "cmbbx_nameOfMachine";
-            this.cmbbx_nameOfMachine.Size = new System.Drawing.Size(271, 24);
+            this.cmbbx_nameOfMachine.Size = new System.Drawing.Size(204, 21);
             this.cmbbx_nameOfMachine.TabIndex = 0;
             this.cmbbx_nameOfMachine.SelectedIndexChanged += new System.EventHandler(this.cmbbx_nameOfMachine_SelectedIndexChanged);
             // 
@@ -236,10 +241,10 @@
             this.lbl_view.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_view.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_view.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_view.Location = new System.Drawing.Point(3, 73);
-            this.lbl_view.Margin = new System.Windows.Forms.Padding(3);
+            this.lbl_view.Location = new System.Drawing.Point(2, 58);
+            this.lbl_view.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbl_view.Name = "lbl_view";
-            this.lbl_view.Size = new System.Drawing.Size(271, 29);
+            this.lbl_view.Size = new System.Drawing.Size(204, 24);
             this.lbl_view.TabIndex = 13;
             this.lbl_view.Text = "Наименовние:";
             this.lbl_view.UseCompatibleTextRendering = true;
@@ -248,9 +253,10 @@
             // 
             this.cmbbx_typeOfMachine.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbbx_typeOfMachine.FormattingEnabled = true;
-            this.cmbbx_typeOfMachine.Location = new System.Drawing.Point(3, 38);
+            this.cmbbx_typeOfMachine.Location = new System.Drawing.Point(2, 30);
+            this.cmbbx_typeOfMachine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbbx_typeOfMachine.Name = "cmbbx_typeOfMachine";
-            this.cmbbx_typeOfMachine.Size = new System.Drawing.Size(271, 24);
+            this.cmbbx_typeOfMachine.Size = new System.Drawing.Size(204, 21);
             this.cmbbx_typeOfMachine.TabIndex = 14;
             this.cmbbx_typeOfMachine.SelectedIndexChanged += new System.EventHandler(this.cmbbx_typeOfMachine_SelectedIndexChanged);
             // 
@@ -259,9 +265,10 @@
             this.btn_out.BackColor = System.Drawing.Color.Silver;
             this.btn_out.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_out.Image = global::GraphicsPanelStanki.Properties.Resources.log_in__1_;
-            this.btn_out.Location = new System.Drawing.Point(210, 3);
+            this.btn_out.Location = new System.Drawing.Point(158, 2);
+            this.btn_out.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_out.Name = "btn_out";
-            this.btn_out.Size = new System.Drawing.Size(64, 51);
+            this.btn_out.Size = new System.Drawing.Size(48, 43);
             this.btn_out.TabIndex = 19;
             this.btn_out.UseCompatibleTextRendering = true;
             this.btn_out.UseVisualStyleBackColor = false;
@@ -271,9 +278,10 @@
             this.btn_in.BackColor = System.Drawing.Color.Silver;
             this.btn_in.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_in.Image = global::GraphicsPanelStanki.Properties.Resources.log_in;
-            this.btn_in.Location = new System.Drawing.Point(141, 3);
+            this.btn_in.Location = new System.Drawing.Point(106, 2);
+            this.btn_in.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_in.Name = "btn_in";
-            this.btn_in.Size = new System.Drawing.Size(63, 51);
+            this.btn_in.Size = new System.Drawing.Size(48, 43);
             this.btn_in.TabIndex = 18;
             this.btn_in.UseCompatibleTextRendering = true;
             this.btn_in.UseVisualStyleBackColor = false;
@@ -283,9 +291,10 @@
             this.btn_book.BackColor = System.Drawing.Color.Silver;
             this.btn_book.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_book.Image = global::GraphicsPanelStanki.Properties.Resources.book_03;
-            this.btn_book.Location = new System.Drawing.Point(72, 3);
+            this.btn_book.Location = new System.Drawing.Point(54, 2);
+            this.btn_book.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_book.Name = "btn_book";
-            this.btn_book.Size = new System.Drawing.Size(63, 51);
+            this.btn_book.Size = new System.Drawing.Size(48, 43);
             this.btn_book.TabIndex = 17;
             this.btn_book.UseCompatibleTextRendering = true;
             this.btn_book.UseVisualStyleBackColor = false;
@@ -295,9 +304,10 @@
             this.btn_camera.BackColor = System.Drawing.Color.Silver;
             this.btn_camera.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_camera.Image = global::GraphicsPanelStanki.Properties.Resources.video_camera1;
-            this.btn_camera.Location = new System.Drawing.Point(3, 3);
+            this.btn_camera.Location = new System.Drawing.Point(2, 2);
+            this.btn_camera.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_camera.Name = "btn_camera";
-            this.btn_camera.Size = new System.Drawing.Size(63, 51);
+            this.btn_camera.Size = new System.Drawing.Size(48, 43);
             this.btn_camera.TabIndex = 16;
             this.btn_camera.UseCompatibleTextRendering = true;
             this.btn_camera.UseVisualStyleBackColor = false;
@@ -310,8 +320,9 @@
             this.pictureBox_stanki.Image = global::GraphicsPanelStanki.Properties.Resources.image_2;
             this.pictureBox_stanki.InitialImage = null;
             this.pictureBox_stanki.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox_stanki.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox_stanki.Name = "pictureBox_stanki";
-            this.pictureBox_stanki.Size = new System.Drawing.Size(271, 188);
+            this.pictureBox_stanki.Size = new System.Drawing.Size(204, 153);
             this.pictureBox_stanki.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_stanki.TabIndex = 15;
             this.pictureBox_stanki.TabStop = false;
@@ -322,9 +333,10 @@
             this.logo_report.Dock = System.Windows.Forms.DockStyle.Fill;
             this.logo_report.Enabled = false;
             this.logo_report.Image = global::GraphicsPanelStanki.Properties.Resources.bar_chart_01;
-            this.logo_report.Location = new System.Drawing.Point(3, 204);
+            this.logo_report.Location = new System.Drawing.Point(2, 164);
+            this.logo_report.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logo_report.Name = "logo_report";
-            this.logo_report.Size = new System.Drawing.Size(63, 62);
+            this.logo_report.Size = new System.Drawing.Size(48, 52);
             this.logo_report.TabIndex = 10;
             this.logo_report.UseVisualStyleBackColor = false;
             // 
@@ -334,9 +346,10 @@
             this.logo_review.Dock = System.Windows.Forms.DockStyle.Fill;
             this.logo_review.Enabled = false;
             this.logo_review.Image = global::GraphicsPanelStanki.Properties.Resources.graph_increase;
-            this.logo_review.Location = new System.Drawing.Point(3, 137);
+            this.logo_review.Location = new System.Drawing.Point(2, 110);
+            this.logo_review.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logo_review.Name = "logo_review";
-            this.logo_review.Size = new System.Drawing.Size(63, 61);
+            this.logo_review.Size = new System.Drawing.Size(48, 50);
             this.logo_review.TabIndex = 8;
             this.logo_review.UseVisualStyleBackColor = false;
             // 
@@ -346,9 +359,10 @@
             this.logo_monitoring.Dock = System.Windows.Forms.DockStyle.Fill;
             this.logo_monitoring.Enabled = false;
             this.logo_monitoring.Image = global::GraphicsPanelStanki.Properties.Resources.alarm;
-            this.logo_monitoring.Location = new System.Drawing.Point(3, 70);
+            this.logo_monitoring.Location = new System.Drawing.Point(2, 56);
+            this.logo_monitoring.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logo_monitoring.Name = "logo_monitoring";
-            this.logo_monitoring.Size = new System.Drawing.Size(63, 61);
+            this.logo_monitoring.Size = new System.Drawing.Size(48, 50);
             this.logo_monitoring.TabIndex = 6;
             this.logo_monitoring.UseVisualStyleBackColor = false;
             // 
@@ -358,9 +372,10 @@
             this.logo_home.Dock = System.Windows.Forms.DockStyle.Fill;
             this.logo_home.Enabled = false;
             this.logo_home.Image = global::GraphicsPanelStanki.Properties.Resources.home_04;
-            this.logo_home.Location = new System.Drawing.Point(3, 3);
+            this.logo_home.Location = new System.Drawing.Point(2, 2);
+            this.logo_home.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logo_home.Name = "logo_home";
-            this.logo_home.Size = new System.Drawing.Size(63, 61);
+            this.logo_home.Size = new System.Drawing.Size(48, 50);
             this.logo_home.TabIndex = 1;
             this.logo_home.UseVisualStyleBackColor = false;
             // 
@@ -368,9 +383,10 @@
             // 
             this.logo_Axioma.Dock = System.Windows.Forms.DockStyle.Fill;
             this.logo_Axioma.Image = global::GraphicsPanelStanki.Properties.Resources.image_1;
-            this.logo_Axioma.Location = new System.Drawing.Point(3, 3);
+            this.logo_Axioma.Location = new System.Drawing.Point(2, 2);
+            this.logo_Axioma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logo_Axioma.Name = "logo_Axioma";
-            this.logo_Axioma.Size = new System.Drawing.Size(79, 59);
+            this.logo_Axioma.Size = new System.Drawing.Size(60, 49);
             this.logo_Axioma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logo_Axioma.TabIndex = 1;
             this.logo_Axioma.TabStop = false;
@@ -380,9 +396,10 @@
             this.btn_x.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btn_x.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_x.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_x.Location = new System.Drawing.Point(3, 3);
+            this.btn_x.Location = new System.Drawing.Point(2, 2);
+            this.btn_x.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_x.Name = "btn_x";
-            this.btn_x.Size = new System.Drawing.Size(33, 52);
+            this.btn_x.Size = new System.Drawing.Size(25, 44);
             this.btn_x.TabIndex = 20;
             this.btn_x.Text = "X";
             this.btn_x.UseCompatibleTextRendering = true;
@@ -393,9 +410,10 @@
             this.btn_y.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btn_y.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_y.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_y.Location = new System.Drawing.Point(42, 3);
+            this.btn_y.Location = new System.Drawing.Point(31, 2);
+            this.btn_y.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_y.Name = "btn_y";
-            this.btn_y.Size = new System.Drawing.Size(33, 52);
+            this.btn_y.Size = new System.Drawing.Size(25, 44);
             this.btn_y.TabIndex = 21;
             this.btn_y.Text = "Y";
             this.btn_y.UseCompatibleTextRendering = true;
@@ -406,9 +424,10 @@
             this.btn_z.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btn_z.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_z.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_z.Location = new System.Drawing.Point(81, 3);
+            this.btn_z.Location = new System.Drawing.Point(60, 2);
+            this.btn_z.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_z.Name = "btn_z";
-            this.btn_z.Size = new System.Drawing.Size(33, 52);
+            this.btn_z.Size = new System.Drawing.Size(25, 44);
             this.btn_z.TabIndex = 22;
             this.btn_z.Text = "Z";
             this.btn_z.UseCompatibleTextRendering = true;
@@ -419,9 +438,10 @@
             this.btn_c.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btn_c.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_c.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_c.Location = new System.Drawing.Point(198, 3);
+            this.btn_c.Location = new System.Drawing.Point(147, 2);
+            this.btn_c.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_c.Name = "btn_c";
-            this.btn_c.Size = new System.Drawing.Size(33, 52);
+            this.btn_c.Size = new System.Drawing.Size(25, 44);
             this.btn_c.TabIndex = 23;
             this.btn_c.Text = "C";
             this.btn_c.UseCompatibleTextRendering = true;
@@ -432,9 +452,10 @@
             this.btn_a.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btn_a.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_a.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_a.Location = new System.Drawing.Point(120, 3);
+            this.btn_a.Location = new System.Drawing.Point(89, 2);
+            this.btn_a.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_a.Name = "btn_a";
-            this.btn_a.Size = new System.Drawing.Size(33, 52);
+            this.btn_a.Size = new System.Drawing.Size(25, 44);
             this.btn_a.TabIndex = 24;
             this.btn_a.Text = "A";
             this.btn_a.UseCompatibleTextRendering = true;
@@ -445,9 +466,10 @@
             this.btn_b.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btn_b.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_b.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_b.Location = new System.Drawing.Point(159, 3);
+            this.btn_b.Location = new System.Drawing.Point(118, 2);
+            this.btn_b.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_b.Name = "btn_b";
-            this.btn_b.Size = new System.Drawing.Size(33, 52);
+            this.btn_b.Size = new System.Drawing.Size(25, 44);
             this.btn_b.TabIndex = 25;
             this.btn_b.Text = "B";
             this.btn_b.UseCompatibleTextRendering = true;
@@ -458,9 +480,10 @@
             this.btn_auto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btn_auto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_auto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_auto.Location = new System.Drawing.Point(237, 3);
+            this.btn_auto.Location = new System.Drawing.Point(176, 2);
+            this.btn_auto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_auto.Name = "btn_auto";
-            this.btn_auto.Size = new System.Drawing.Size(37, 52);
+            this.btn_auto.Size = new System.Drawing.Size(30, 44);
             this.btn_auto.TabIndex = 26;
             this.btn_auto.Text = "Авто";
             this.btn_auto.UseCompatibleTextRendering = true;
@@ -472,10 +495,10 @@
             this.lbl_shpin_temp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_shpin_temp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_shpin_temp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_shpin_temp.Location = new System.Drawing.Point(3, 3);
-            this.lbl_shpin_temp.Margin = new System.Windows.Forms.Padding(3);
+            this.lbl_shpin_temp.Location = new System.Drawing.Point(2, 2);
+            this.lbl_shpin_temp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbl_shpin_temp.Name = "lbl_shpin_temp";
-            this.lbl_shpin_temp.Size = new System.Drawing.Size(549, 35);
+            this.lbl_shpin_temp.Size = new System.Drawing.Size(412, 29);
             this.lbl_shpin_temp.TabIndex = 27;
             this.lbl_shpin_temp.Text = "График прогрева шпинделя";
             this.lbl_shpin_temp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -490,7 +513,7 @@
             this.lbl_day_temp.Location = new System.Drawing.Point(0, 0);
             this.lbl_day_temp.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_day_temp.Name = "lbl_day_temp";
-            this.lbl_day_temp.Size = new System.Drawing.Size(555, 60);
+            this.lbl_day_temp.Size = new System.Drawing.Size(416, 49);
             this.lbl_day_temp.TabIndex = 28;
             this.lbl_day_temp.Text = "График температуры за \r\nтекущие сутки";
             this.lbl_day_temp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -502,10 +525,10 @@
             this.lbl_current_val.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_current_val.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_current_val.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_current_val.Location = new System.Drawing.Point(3, 3);
-            this.lbl_current_val.Margin = new System.Windows.Forms.Padding(3);
+            this.lbl_current_val.Location = new System.Drawing.Point(2, 2);
+            this.lbl_current_val.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbl_current_val.Name = "lbl_current_val";
-            this.lbl_current_val.Size = new System.Drawing.Size(550, 47);
+            this.lbl_current_val.Size = new System.Drawing.Size(412, 39);
             this.lbl_current_val.TabIndex = 29;
             this.lbl_current_val.Text = "Текущие значения компонентов";
             this.lbl_current_val.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -517,9 +540,10 @@
             this.lbl_actv_messg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_actv_messg.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_actv_messg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_actv_messg.Location = new System.Drawing.Point(3, 0);
+            this.lbl_actv_messg.Location = new System.Drawing.Point(2, 0);
+            this.lbl_actv_messg.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_actv_messg.Name = "lbl_actv_messg";
-            this.lbl_actv_messg.Size = new System.Drawing.Size(550, 67);
+            this.lbl_actv_messg.Size = new System.Drawing.Size(412, 54);
             this.lbl_actv_messg.TabIndex = 30;
             this.lbl_actv_messg.Text = "Активные сообщения";
             this.lbl_actv_messg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -531,9 +555,10 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.Location = new System.Drawing.Point(3, 18);
+            this.button1.Location = new System.Drawing.Point(2, 14);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 71);
+            this.button1.Size = new System.Drawing.Size(65, 59);
             this.button1.TabIndex = 31;
             this.button1.Text = "Шпиндель";
             this.button1.UseCompatibleTextRendering = true;
@@ -544,9 +569,10 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.Location = new System.Drawing.Point(95, 18);
+            this.button2.Location = new System.Drawing.Point(71, 14);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 71);
+            this.button2.Size = new System.Drawing.Size(65, 59);
             this.button2.TabIndex = 32;
             this.button2.Text = "Ось X";
             this.button2.UseCompatibleTextRendering = true;
@@ -557,9 +583,10 @@
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button3.Location = new System.Drawing.Point(187, 18);
+            this.button3.Location = new System.Drawing.Point(140, 14);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(86, 71);
+            this.button3.Size = new System.Drawing.Size(65, 59);
             this.button3.TabIndex = 33;
             this.button3.Text = "Ось Y";
             this.button3.UseCompatibleTextRendering = true;
@@ -570,9 +597,10 @@
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button4.Location = new System.Drawing.Point(279, 18);
+            this.button4.Location = new System.Drawing.Point(209, 14);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(86, 71);
+            this.button4.Size = new System.Drawing.Size(65, 59);
             this.button4.TabIndex = 34;
             this.button4.Text = "Ось Z";
             this.button4.UseCompatibleTextRendering = true;
@@ -583,9 +611,10 @@
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button5.Location = new System.Drawing.Point(371, 18);
+            this.button5.Location = new System.Drawing.Point(278, 14);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(86, 71);
+            this.button5.Size = new System.Drawing.Size(65, 59);
             this.button5.TabIndex = 35;
             this.button5.Text = "Ось A";
             this.button5.UseCompatibleTextRendering = true;
@@ -596,9 +625,10 @@
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button6.Location = new System.Drawing.Point(463, 18);
+            this.button6.Location = new System.Drawing.Point(347, 14);
+            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(90, 71);
+            this.button6.Size = new System.Drawing.Size(67, 59);
             this.button6.TabIndex = 36;
             this.button6.Text = "Ось B";
             this.button6.UseCompatibleTextRendering = true;
@@ -609,9 +639,10 @@
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button7.Location = new System.Drawing.Point(3, 18);
+            this.button7.Location = new System.Drawing.Point(2, 14);
+            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(105, 73);
+            this.button7.Size = new System.Drawing.Size(79, 60);
             this.button7.TabIndex = 37;
             this.button7.Text = "Панель\r\nоператора\r\n";
             this.button7.UseCompatibleTextRendering = true;
@@ -622,9 +653,10 @@
             this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button8.Location = new System.Drawing.Point(114, 18);
+            this.button8.Location = new System.Drawing.Point(85, 14);
+            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(105, 73);
+            this.button8.Size = new System.Drawing.Size(79, 60);
             this.button8.TabIndex = 38;
             this.button8.Text = "Станочный\r\nпульт\r\n";
             this.button8.UseCompatibleTextRendering = true;
@@ -635,9 +667,10 @@
             this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button9.Location = new System.Drawing.Point(336, 18);
+            this.button9.Location = new System.Drawing.Point(251, 14);
+            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(105, 73);
+            this.button9.Size = new System.Drawing.Size(79, 60);
             this.button9.TabIndex = 39;
             this.button9.Text = "Питание";
             this.button9.UseCompatibleTextRendering = true;
@@ -648,10 +681,11 @@
             this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button10.Location = new System.Drawing.Point(225, 18);
+            this.button10.Location = new System.Drawing.Point(168, 14);
+            this.button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button10.Name = "button10";
             this.button10.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button10.Size = new System.Drawing.Size(105, 73);
+            this.button10.Size = new System.Drawing.Size(79, 60);
             this.button10.TabIndex = 40;
             this.button10.Text = "Технология\r\n";
             this.button10.UseCompatibleTextRendering = true;
@@ -662,9 +696,10 @@
             this.btn_cnc.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_cnc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_cnc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_cnc.Location = new System.Drawing.Point(447, 18);
+            this.btn_cnc.Location = new System.Drawing.Point(334, 14);
+            this.btn_cnc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_cnc.Name = "btn_cnc";
-            this.btn_cnc.Size = new System.Drawing.Size(106, 73);
+            this.btn_cnc.Size = new System.Drawing.Size(80, 60);
             this.btn_cnc.TabIndex = 41;
             this.btn_cnc.Text = "СЧПУ";
             this.btn_cnc.UseCompatibleTextRendering = true;
@@ -689,17 +724,18 @@
             this.MainGrid.Controls.Add(this.AxiOMALabel, 0, 0);
             this.MainGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainGrid.Location = new System.Drawing.Point(0, 0);
+            this.MainGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MainGrid.Name = "MainGrid";
-            this.MainGrid.Padding = new System.Windows.Forms.Padding(5);
+            this.MainGrid.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MainGrid.RowCount = 7;
             this.MainGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.5514F));
             this.MainGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.37383F));
             this.MainGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.677686F));
             this.MainGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.45455F));
             this.MainGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.873536F));
-            this.MainGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 185F));
-            this.MainGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 113F));
-            this.MainGrid.Size = new System.Drawing.Size(1398, 794);
+            this.MainGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.MainGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 92F));
+            this.MainGrid.Size = new System.Drawing.Size(1048, 645);
             this.MainGrid.TabIndex = 42;
             // 
             // lbl_Header
@@ -709,10 +745,10 @@
             this.lbl_Header.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_Header.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_Header.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_Header.Location = new System.Drawing.Point(285, 8);
-            this.lbl_Header.Margin = new System.Windows.Forms.Padding(3);
+            this.lbl_Header.Location = new System.Drawing.Point(214, 6);
+            this.lbl_Header.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbl_Header.Name = "lbl_Header";
-            this.lbl_Header.Size = new System.Drawing.Size(1105, 59);
+            this.lbl_Header.Size = new System.Drawing.Size(828, 49);
             this.lbl_Header.TabIndex = 28;
             this.lbl_Header.Text = "Тут должна отображаться текущая модель станка";
             this.lbl_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -724,13 +760,13 @@
             this.GridOfGeneralPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.GridOfGeneralPanel.Controls.Add(this.GridOfGeneralButtons, 0, 0);
             this.GridOfGeneralPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridOfGeneralPanel.Location = new System.Drawing.Point(5, 70);
+            this.GridOfGeneralPanel.Location = new System.Drawing.Point(4, 57);
             this.GridOfGeneralPanel.Margin = new System.Windows.Forms.Padding(0);
             this.GridOfGeneralPanel.Name = "GridOfGeneralPanel";
             this.GridOfGeneralPanel.RowCount = 1;
             this.GridOfGeneralPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.GridOfGeneralPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.GridOfGeneralPanel.Size = new System.Drawing.Size(277, 269);
+            this.GridOfGeneralPanel.Size = new System.Drawing.Size(208, 218);
             this.GridOfGeneralPanel.TabIndex = 10;
             // 
             // GridOfGeneralButtons
@@ -755,7 +791,7 @@
             this.GridOfGeneralButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.GridOfGeneralButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.GridOfGeneralButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.GridOfGeneralButtons.Size = new System.Drawing.Size(277, 269);
+            this.GridOfGeneralButtons.Size = new System.Drawing.Size(208, 218);
             this.GridOfGeneralButtons.TabIndex = 0;
             // 
             // GridOfOtherButtons
@@ -768,13 +804,13 @@
             this.GridOfOtherButtons.Controls.Add(this.otherBtns1, 0, 0);
             this.GridOfOtherButtons.Controls.Add(this.otherBtns2, 0, 1);
             this.GridOfOtherButtons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridOfOtherButtons.Location = new System.Drawing.Point(5, 674);
+            this.GridOfOtherButtons.Location = new System.Drawing.Point(4, 546);
             this.GridOfOtherButtons.Margin = new System.Windows.Forms.Padding(0);
             this.GridOfOtherButtons.Name = "GridOfOtherButtons";
             this.GridOfOtherButtons.RowCount = 2;
             this.GridOfOtherButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.GridOfOtherButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.GridOfOtherButtons.Size = new System.Drawing.Size(277, 115);
+            this.GridOfOtherButtons.Size = new System.Drawing.Size(208, 95);
             this.GridOfOtherButtons.TabIndex = 3;
             // 
             // otherBtns1
@@ -795,7 +831,7 @@
             this.otherBtns1.RowCount = 1;
             this.otherBtns1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.otherBtns1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.otherBtns1.Size = new System.Drawing.Size(277, 57);
+            this.otherBtns1.Size = new System.Drawing.Size(208, 47);
             this.otherBtns1.TabIndex = 0;
             // 
             // otherBtns2
@@ -816,12 +852,12 @@
             this.otherBtns2.Controls.Add(this.btn_auto, 6, 0);
             this.otherBtns2.Controls.Add(this.btn_b, 4, 0);
             this.otherBtns2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.otherBtns2.Location = new System.Drawing.Point(0, 57);
+            this.otherBtns2.Location = new System.Drawing.Point(0, 47);
             this.otherBtns2.Margin = new System.Windows.Forms.Padding(0);
             this.otherBtns2.Name = "otherBtns2";
             this.otherBtns2.RowCount = 1;
             this.otherBtns2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.otherBtns2.Size = new System.Drawing.Size(277, 58);
+            this.otherBtns2.Size = new System.Drawing.Size(208, 48);
             this.otherBtns2.TabIndex = 1;
             // 
             // ShpindelDiagram1
@@ -832,7 +868,7 @@
             this.ShpindelDiagram1.Controls.Add(this.chart_LineDiagram, 0, 2);
             this.ShpindelDiagram1.Controls.Add(this.tableLayoutPanel1, 0, 1);
             this.ShpindelDiagram1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ShpindelDiagram1.Location = new System.Drawing.Point(282, 70);
+            this.ShpindelDiagram1.Location = new System.Drawing.Point(212, 57);
             this.ShpindelDiagram1.Margin = new System.Windows.Forms.Padding(0);
             this.ShpindelDiagram1.Name = "ShpindelDiagram1";
             this.ShpindelDiagram1.RowCount = 3;
@@ -840,7 +876,7 @@
             this.ShpindelDiagram1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.ShpindelDiagram1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.ShpindelDiagram1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.ShpindelDiagram1.Size = new System.Drawing.Size(555, 419);
+            this.ShpindelDiagram1.Size = new System.Drawing.Size(416, 339);
             this.ShpindelDiagram1.TabIndex = 7;
             // 
             // chart_LineDiagram
@@ -856,7 +892,8 @@
             legend1.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Row;
             legend1.Name = "Legend1";
             this.chart_LineDiagram.Legends.Add(legend1);
-            this.chart_LineDiagram.Location = new System.Drawing.Point(3, 85);
+            this.chart_LineDiagram.Location = new System.Drawing.Point(2, 68);
+            this.chart_LineDiagram.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chart_LineDiagram.Name = "chart_LineDiagram";
             this.chart_LineDiagram.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             series1.ChartArea = "ChartArea1";
@@ -875,7 +912,7 @@
             series2.Name = "Скорость шпинделя, об/мин";
             this.chart_LineDiagram.Series.Add(series1);
             this.chart_LineDiagram.Series.Add(series2);
-            this.chart_LineDiagram.Size = new System.Drawing.Size(549, 331);
+            this.chart_LineDiagram.Size = new System.Drawing.Size(412, 269);
             this.chart_LineDiagram.TabIndex = 0;
             this.chart_LineDiagram.Text = "chart1";
             title1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
@@ -899,12 +936,12 @@
             this.tableLayoutPanel1.Controls.Add(this.btn_loadLineDiagram, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.cb_dayTime, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 41);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 33);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(555, 41);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(416, 33);
             this.tableLayoutPanel1.TabIndex = 28;
             // 
             // cb_timeTo
@@ -912,9 +949,10 @@
             this.cb_timeTo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cb_timeTo.FormatString = "T";
             this.cb_timeTo.FormattingEnabled = true;
-            this.cb_timeTo.Location = new System.Drawing.Point(284, 8);
+            this.cb_timeTo.Location = new System.Drawing.Point(214, 6);
+            this.cb_timeTo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cb_timeTo.Name = "cb_timeTo";
-            this.cb_timeTo.Size = new System.Drawing.Size(121, 24);
+            this.cb_timeTo.Size = new System.Drawing.Size(92, 21);
             this.cb_timeTo.TabIndex = 45;
             // 
             // cb_timeFrom
@@ -922,9 +960,10 @@
             this.cb_timeFrom.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cb_timeFrom.FormatString = "T";
             this.cb_timeFrom.FormattingEnabled = true;
-            this.cb_timeFrom.Location = new System.Drawing.Point(146, 8);
+            this.cb_timeFrom.Location = new System.Drawing.Point(110, 6);
+            this.cb_timeFrom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cb_timeFrom.Name = "cb_timeFrom";
-            this.cb_timeFrom.Size = new System.Drawing.Size(121, 24);
+            this.cb_timeFrom.Size = new System.Drawing.Size(92, 21);
             this.cb_timeFrom.TabIndex = 44;
             // 
             // btn_loadLineDiagram
@@ -932,9 +971,10 @@
             this.btn_loadLineDiagram.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_loadLineDiagram.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_loadLineDiagram.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_loadLineDiagram.Location = new System.Drawing.Point(431, 3);
+            this.btn_loadLineDiagram.Location = new System.Drawing.Point(324, 2);
+            this.btn_loadLineDiagram.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_loadLineDiagram.Name = "btn_loadLineDiagram";
-            this.btn_loadLineDiagram.Size = new System.Drawing.Size(106, 35);
+            this.btn_loadLineDiagram.Size = new System.Drawing.Size(80, 28);
             this.btn_loadLineDiagram.TabIndex = 42;
             this.btn_loadLineDiagram.Text = "Вывод";
             this.btn_loadLineDiagram.UseCompatibleTextRendering = true;
@@ -946,9 +986,10 @@
             this.cb_dayTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cb_dayTime.FormatString = "d";
             this.cb_dayTime.FormattingEnabled = true;
-            this.cb_dayTime.Location = new System.Drawing.Point(8, 8);
+            this.cb_dayTime.Location = new System.Drawing.Point(6, 6);
+            this.cb_dayTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cb_dayTime.Name = "cb_dayTime";
-            this.cb_dayTime.Size = new System.Drawing.Size(121, 24);
+            this.cb_dayTime.Size = new System.Drawing.Size(92, 21);
             this.cb_dayTime.TabIndex = 43;
             // 
             // ShpindelDiagram2
@@ -959,7 +1000,7 @@
             this.ShpindelDiagram2.Controls.Add(this.lbl_day_temp, 0, 0);
             this.ShpindelDiagram2.Controls.Add(this.chart_ColumDiagram, 0, 1);
             this.ShpindelDiagram2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ShpindelDiagram2.Location = new System.Drawing.Point(282, 489);
+            this.ShpindelDiagram2.Location = new System.Drawing.Point(212, 396);
             this.ShpindelDiagram2.Margin = new System.Windows.Forms.Padding(0);
             this.ShpindelDiagram2.Name = "ShpindelDiagram2";
             this.ShpindelDiagram2.RowCount = 3;
@@ -967,7 +1008,7 @@
             this.ShpindelDiagram2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.ShpindelDiagram2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.ShpindelDiagram2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.ShpindelDiagram2.Size = new System.Drawing.Size(555, 300);
+            this.ShpindelDiagram2.Size = new System.Drawing.Size(416, 245);
             this.ShpindelDiagram2.TabIndex = 8;
             // 
             // tableLayoutPanel2
@@ -979,12 +1020,12 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.Controls.Add(this.btn_loadColumDiagram, 3, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 240);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 196);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(555, 60);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(416, 49);
             this.tableLayoutPanel2.TabIndex = 29;
             // 
             // btn_loadColumDiagram
@@ -992,9 +1033,10 @@
             this.btn_loadColumDiagram.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_loadColumDiagram.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_loadColumDiagram.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_loadColumDiagram.Location = new System.Drawing.Point(431, 12);
+            this.btn_loadColumDiagram.Location = new System.Drawing.Point(324, 10);
+            this.btn_loadColumDiagram.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_loadColumDiagram.Name = "btn_loadColumDiagram";
-            this.btn_loadColumDiagram.Size = new System.Drawing.Size(106, 35);
+            this.btn_loadColumDiagram.Size = new System.Drawing.Size(80, 28);
             this.btn_loadColumDiagram.TabIndex = 43;
             this.btn_loadColumDiagram.Text = "Вывод";
             this.btn_loadColumDiagram.UseCompatibleTextRendering = true;
@@ -1014,7 +1056,8 @@
             legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend2.Name = "Legend1";
             this.chart_ColumDiagram.Legends.Add(legend2);
-            this.chart_ColumDiagram.Location = new System.Drawing.Point(3, 63);
+            this.chart_ColumDiagram.Location = new System.Drawing.Point(2, 51);
+            this.chart_ColumDiagram.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chart_ColumDiagram.Name = "chart_ColumDiagram";
             series3.ChartArea = "ChartArea1";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar;
@@ -1034,7 +1077,7 @@
             this.chart_ColumDiagram.Series.Add(series3);
             this.chart_ColumDiagram.Series.Add(series4);
             this.chart_ColumDiagram.Series.Add(series5);
-            this.chart_ColumDiagram.Size = new System.Drawing.Size(549, 174);
+            this.chart_ColumDiagram.Size = new System.Drawing.Size(412, 143);
             this.chart_ColumDiagram.TabIndex = 0;
             this.chart_ColumDiagram.Text = "chart2";
             // 
@@ -1046,14 +1089,14 @@
             this.CurrentValueButtons.Controls.Add(this.GridOfValueButtons2, 0, 2);
             this.CurrentValueButtons.Controls.Add(this.lbl_current_val, 0, 0);
             this.CurrentValueButtons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CurrentValueButtons.Location = new System.Drawing.Point(837, 70);
+            this.CurrentValueButtons.Location = new System.Drawing.Point(628, 57);
             this.CurrentValueButtons.Margin = new System.Windows.Forms.Padding(0);
             this.CurrentValueButtons.Name = "CurrentValueButtons";
             this.CurrentValueButtons.RowCount = 3;
             this.CurrentValueButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.CurrentValueButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.CurrentValueButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.CurrentValueButtons.Size = new System.Drawing.Size(556, 269);
+            this.CurrentValueButtons.Size = new System.Drawing.Size(416, 218);
             this.CurrentValueButtons.TabIndex = 9;
             // 
             // GridOfValueButtons1
@@ -1072,13 +1115,13 @@
             this.GridOfValueButtons1.Controls.Add(this.button1, 0, 0);
             this.GridOfValueButtons1.Controls.Add(this.button2, 1, 0);
             this.GridOfValueButtons1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridOfValueButtons1.Location = new System.Drawing.Point(0, 53);
+            this.GridOfValueButtons1.Location = new System.Drawing.Point(0, 43);
             this.GridOfValueButtons1.Margin = new System.Windows.Forms.Padding(0);
             this.GridOfValueButtons1.Name = "GridOfValueButtons1";
-            this.GridOfValueButtons1.Padding = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.GridOfValueButtons1.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
             this.GridOfValueButtons1.RowCount = 1;
             this.GridOfValueButtons1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.GridOfValueButtons1.Size = new System.Drawing.Size(556, 107);
+            this.GridOfValueButtons1.Size = new System.Drawing.Size(416, 87);
             this.GridOfValueButtons1.TabIndex = 0;
             // 
             // GridOfValueButtons2
@@ -1095,13 +1138,13 @@
             this.GridOfValueButtons2.Controls.Add(this.btn_cnc, 4, 0);
             this.GridOfValueButtons2.Controls.Add(this.button8, 1, 0);
             this.GridOfValueButtons2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridOfValueButtons2.Location = new System.Drawing.Point(0, 160);
+            this.GridOfValueButtons2.Location = new System.Drawing.Point(0, 130);
             this.GridOfValueButtons2.Margin = new System.Windows.Forms.Padding(0);
             this.GridOfValueButtons2.Name = "GridOfValueButtons2";
-            this.GridOfValueButtons2.Padding = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.GridOfValueButtons2.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
             this.GridOfValueButtons2.RowCount = 1;
             this.GridOfValueButtons2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.GridOfValueButtons2.Size = new System.Drawing.Size(556, 109);
+            this.GridOfValueButtons2.Size = new System.Drawing.Size(416, 88);
             this.GridOfValueButtons2.TabIndex = 1;
             // 
             // ComboBoxes
@@ -1113,7 +1156,7 @@
             this.ComboBoxes.Controls.Add(this.cmbbx_nameOfMachine, 0, 3);
             this.ComboBoxes.Controls.Add(this.lbl_view, 0, 2);
             this.ComboBoxes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ComboBoxes.Location = new System.Drawing.Point(5, 339);
+            this.ComboBoxes.Location = new System.Drawing.Point(4, 275);
             this.ComboBoxes.Margin = new System.Windows.Forms.Padding(0);
             this.ComboBoxes.Name = "ComboBoxes";
             this.ComboBoxes.RowCount = 4;
@@ -1122,7 +1165,7 @@
             this.ComboBoxes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.ComboBoxes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.ComboBoxes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.ComboBoxes.Size = new System.Drawing.Size(277, 141);
+            this.ComboBoxes.Size = new System.Drawing.Size(208, 114);
             this.ComboBoxes.TabIndex = 11;
             // 
             // GridOfActiveMesseges
@@ -1132,14 +1175,14 @@
             this.GridOfActiveMesseges.Controls.Add(this.dataGrid_MachineMessages, 0, 1);
             this.GridOfActiveMesseges.Controls.Add(this.lbl_actv_messg, 0, 0);
             this.GridOfActiveMesseges.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridOfActiveMesseges.Location = new System.Drawing.Point(837, 339);
+            this.GridOfActiveMesseges.Location = new System.Drawing.Point(628, 275);
             this.GridOfActiveMesseges.Margin = new System.Windows.Forms.Padding(0);
             this.GridOfActiveMesseges.Name = "GridOfActiveMesseges";
             this.GridOfActiveMesseges.RowCount = 2;
             this.MainGrid.SetRowSpan(this.GridOfActiveMesseges, 5);
             this.GridOfActiveMesseges.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.GridOfActiveMesseges.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.GridOfActiveMesseges.Size = new System.Drawing.Size(556, 450);
+            this.GridOfActiveMesseges.Size = new System.Drawing.Size(416, 366);
             this.GridOfActiveMesseges.TabIndex = 12;
             // 
             // dataGrid_MachineMessages
@@ -1154,12 +1197,13 @@
             this.Value,
             this.Description});
             this.dataGrid_MachineMessages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGrid_MachineMessages.Location = new System.Drawing.Point(3, 70);
+            this.dataGrid_MachineMessages.Location = new System.Drawing.Point(2, 56);
+            this.dataGrid_MachineMessages.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGrid_MachineMessages.Name = "dataGrid_MachineMessages";
             this.dataGrid_MachineMessages.RowHeadersVisible = false;
             this.dataGrid_MachineMessages.RowHeadersWidth = 51;
             this.dataGrid_MachineMessages.RowTemplate.Height = 24;
-            this.dataGrid_MachineMessages.Size = new System.Drawing.Size(550, 377);
+            this.dataGrid_MachineMessages.Size = new System.Drawing.Size(412, 308);
             this.dataGrid_MachineMessages.TabIndex = 7;
             // 
             // ID
@@ -1210,10 +1254,11 @@
             // 
             this.panel1.Controls.Add(this.pictureBox_stanki);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(8, 483);
+            this.panel1.Location = new System.Drawing.Point(6, 391);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
             this.MainGrid.SetRowSpan(this.panel1, 2);
-            this.panel1.Size = new System.Drawing.Size(271, 188);
+            this.panel1.Size = new System.Drawing.Size(204, 153);
             this.panel1.TabIndex = 13;
             // 
             // AxiOMALabel
@@ -1224,22 +1269,23 @@
             this.AxiOMALabel.Controls.Add(this.logo_Axioma, 0, 0);
             this.AxiOMALabel.Controls.Add(this.lbl_Axioma, 1, 0);
             this.AxiOMALabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AxiOMALabel.Location = new System.Drawing.Point(5, 5);
+            this.AxiOMALabel.Location = new System.Drawing.Point(4, 4);
             this.AxiOMALabel.Margin = new System.Windows.Forms.Padding(0);
             this.AxiOMALabel.Name = "AxiOMALabel";
             this.AxiOMALabel.RowCount = 1;
             this.AxiOMALabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.AxiOMALabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.AxiOMALabel.Size = new System.Drawing.Size(277, 65);
+            this.AxiOMALabel.Size = new System.Drawing.Size(208, 53);
             this.AxiOMALabel.TabIndex = 1;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1398, 794);
+            this.ClientSize = new System.Drawing.Size(1048, 645);
             this.Controls.Add(this.MainGrid);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
