@@ -116,6 +116,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\PathToImageConverter.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -124,14 +126,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Database.cs" />
-    <Compile Include="ItemExtractor.cs" />
+    <Compile Include="Models\ItemExtractorModels.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\NotifyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -159,12 +163,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="stankiDB\stankiDBpictures\c_42_u_Hermle.jpg" />
-    <Resource Include="stankiDB\stankiDBpictures\dmgMori_dmp70.png" />
-    <Resource Include="stankiDB\stankiDBpictures\Form_P_350_AgieCharmless.jpg" />
-    <Resource Include="stankiDB\stankiDBpictures\MILL_S_400_Gf_Mikron.jpg" />
-    <Resource Include="stankiDB\stankiDBpictures\NLX_2500_DMG_MORI.jpg" />
-    <Resource Include="stankiDB\stankiDBpictures\VF-2ss_Haas.jpg" />
+    <Content Include="stankiDB\stankiDBpictures\c_42_u_Hermle.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="stankiDB\stankiDBpictures\dmgMori_dmp70.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="stankiDB\stankiDBpictures\Form_P_350_AgieCharmless.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="stankiDB\stankiDBpictures\MILL_S_400_Gf_Mikron.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="stankiDB\stankiDBpictures\NLX_2500_DMG_MORI.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="stankiDB\stankiDBpictures\VF-2ss_Haas.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
