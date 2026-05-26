@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1
 {
+
     public class ItemExtractor
     {
         public string FullName { get; set; }

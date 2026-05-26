@@ -32,8 +32,11 @@ namespace WpfApp1
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            // Ваш код из WinForms работает и здесь
             var table = DB.GetTypesList();
+            if (table == null)
+            {
+                MessageBox.Show("SQL not connect");
+            }
             foreach (DataRow t in table.Rows)
             {
                 cmbbx_typeOfMachine.Items.Add((string)(t.ItemArray[1]));
@@ -58,26 +61,13 @@ namespace WpfApp1
                 MessageBox.Show($"{selectedText}");
             }
         }
-
-        private void MyComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void cmbbx_typeOfMachine_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (cmbbx_typeOfMachine.SelectedItem == null) return;
-
-            // В WPF получаем текст выбранного элемента (при условии, что там лежат строки)
-            string selectedTypeText = cmbbx_typeOfMachine.SelectedItem.ToString();
-
-            // Очищаем элементы второго комбобокса
             cmbbx_nameOfMachine.Items.Clear();
-
-            // Сохраняем в ваш массив
-            headerText[0] = selectedTypeText;
-
-            // Запрашиваем данные из БД
-            var table = DB.GetModelsByTypeName(selectedTypeText);
-
+            headerText[0] = cmbbx_typeOfMachine.SelectedItem.ToString();
+            var table = DB.GetModelsByTypeName(cmbbx_typeOfMachine.Text);
             foreach (DataRow t in table.Rows)
             {
-                // Добавляем объекты точно так же, как в WinForms
                 cmbbx_nameOfMachine.Items.Add(new ItemExtractor
                 {
                     FullName = t.ItemArray[0].ToString() + " - " + t.ItemArray[1].ToString(),
@@ -92,65 +82,9 @@ namespace WpfApp1
                 cmbbx_nameOfMachine.SelectedIndex = 0;
             }
         }
-        private void MyComboBox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void cmbbx_nameOfMachine_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // Проверяем, что элемент действительно выбран, чтобы избежать ошибок
-            if (cmbbx_nameOfMachine.SelectedItem == null) return;
 
-            // Приводим выбранный элемент к типу ItemExtractor
-            var selectedMachine = (ItemExtractor)cmbbx_nameOfMachine.SelectedItem;
-
-            // Записываем отображаемый текст в массив
-            headerText[1] = selectedMachine.FullName;
-
-            // ЗАГРУЗКА ИЗОБРАЖЕНИЯ В WPF
-            try
-            {
-                string imagePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "stankiDB/stankiDBpictures/", selectedMachine.ImageName);
-
-                if (System.IO.File.Exists(imagePath))
-                {
-                    BitmapImage bitmap = new BitmapImage();
-                    bitmap.BeginInit();
-                    bitmap.UriSource = new Uri(imagePath, UriKind.Absolute);
-                    bitmap.EndInit();
-
-                    pictureBox_stanki.Source = bitmap; // Отображаем картинку в WPF
-                }
-                else
-                {
-                    pictureBox_stanki.Source = null; // Если файла нет, очищаем
-                }
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine($"Ошибка загрузки картинки: {ex.Message}");
-                pictureBox_stanki.Source = null;
-            }
-
-            // Вызов вашего метода обновления шапки
-            FillHeader();
-
-            // ОЧИСТКА КОМБОБОКСОВ В WPF
-            cb_dayTime.Items.Clear();
-            cb_timeFrom.Items.Clear();
-            cb_timeTo.Items.Clear();
-
-            cb_dayTime.SelectedIndex = -1;
-            cb_timeFrom.SelectedIndex = -1;
-            cb_timeTo.SelectedIndex = -1;
-
-            // ЗАПОЛНЕНИЕ ДАННЫМИ ИЗ БД
-            var table = DB.GetMachineLoadHistory(selectedMachine.ClearName);
-            foreach (DataRow t in table.Rows)
-            {
-                // В WPF элементы добавляются так же, но при выводе 
-                // простых типов (строки/числа) они отобразятся корректно
-                cb_dayTime.Items.Add(t.ItemArray[0]);
-                cb_timeFrom.Items.Add(t.ItemArray[0]);
-                cb_timeTo.Items.Add(t.ItemArray[0]);
-            }
         }
-
     }
 }
