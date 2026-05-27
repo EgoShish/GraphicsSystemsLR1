@@ -94,31 +94,39 @@
             </Border>
         </Grid>
 
-        <!-- 3. ЦЕНТРАЛЬНАЯ И ПРАВАЯ ЧАСТИ (Пока пустые заглушки) -->
         <Border Grid.Row="1" Grid.Column="1" Margin="3" 
-        Background="White" BorderBrush="#A0A0A0" BorderThickness="1">
-            <Grid>
-                <!-- 2 строки: Панель управления (~20% контента) и График (всё остальное) -->
+        Background="White" BorderBrush="#A0A0A0" BorderThickness="1" CornerRadius="4">
+
+            <Grid Margin="3">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" MinHeight="50"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto" MinHeight="35"/>
+                    <RowDefinition Height="Auto" MinHeight="45"/>
+                    <RowDefinition Height="*" MinHeight="200"/>
+                    <RowDefinition Height="Auto" MinHeight="35"/>
+                    <RowDefinition Height="*" MinHeight="200"/>
                 </Grid.RowDefinitions>
 
-                <!-- Верхняя панель: 3 комбобокса + кнопка -->
-                <Grid Grid.Row="0" Margin="5">
+                <!-- ==================== ГРАФИК 1: ЛИНЕЙНЫЙ ==================== -->
+
+                <Label Grid.Row="0" 
+               Content="📈 График прогрева шпинделя" 
+               FontWeight="SemiBold" FontSize="14"
+               VerticalContentAlignment="Center"
+               Margin="3,0,3,3"/>
+
+                <Grid Grid.Row="1" Margin="3,0,3,3">
                     <Grid.ColumnDefinitions>
-                        <!-- Пропорции для комбобоксов: 20% - 40% - 40% -->
                         <ColumnDefinition Width="0.2*"/>
                         <ColumnDefinition Width="0.4*"/>
                         <ColumnDefinition Width="0.4*"/>
                         <ColumnDefinition Width="Auto"/>
-                        <!-- Кнопка займёт ровно столько, сколько нужно -->
                     </Grid.ColumnDefinitions>
 
                     <ComboBox Grid.Column="0" Margin="3" Height="30"
                       ItemsSource="{Binding UniqueDates}"
                       SelectedItem="{Binding SelectedDate}"
-                      DisplayMemberPath="DateDisplay"/>
+                      DisplayMemberPath="DateDisplay"
+                      Style="{StaticResource {x:Type ComboBox}}"/>
 
                     <ComboBox Grid.Column="1" Margin="3" Height="30"
                       ItemsSource="{Binding AvailableTimeFrom}"
@@ -135,13 +143,66 @@
                     Command="{Binding LoadLineChartCommand}"/>
                 </Grid>
 
-                <!-- График (занимает всё оставшееся место) -->
-                <lvc:CartesianChart Grid.Row="1" Margin="5"
-                            Series="{Binding TemperatureSeries}"
-                            XAxes="{Binding XAxis}"
-                            YAxes="{Binding YAxis}"
-                            ZoomMode="X"
-                            TooltipPosition="Bottom"/>
+                <Border Grid.Row="2" Margin="3" 
+                    BorderBrush="#E0E0E0" BorderThickness="1" 
+                    Background="#FAFAFA" CornerRadius="4">
+                    <lvc:CartesianChart 
+                        Series="{Binding TemperatureSeries}"
+                        XAxes="{Binding XAxis}"
+                        YAxes="{Binding YAxis}"
+                        ZoomMode="X"
+                        TooltipPosition="Bottom">
+                    </lvc:CartesianChart>
+                </Border>
+
+                <!-- ==================== ГРАФИК 2: СТОЛБЧАТЫЙ ==================== -->
+
+                <Border Grid.Row="4" Margin="3" 
+        BorderBrush="#E0E0E0" BorderThickness="1" 
+        Background="#FAFAFA" CornerRadius="4">
+
+                    <lvc:CartesianChart 
+        Series="{Binding ColumnChartSeries}"
+        XAxes="{Binding ColumnXAxis}"
+        YAxes="{Binding ColumnYAxis}"
+        ZoomMode="X"
+        TooltipPosition="Bottom"
+        LegendPosition="Hidden"  <!-- Легенда не нужна, цвета интуитивны -->
+                        Margin="5">
+
+                        <!-- 🔥 Кастомный тултип для столбцов -->
+                        <lvc:CartesianChart.Tooltip>
+                            <lvc:DefaultTooltip 
+                Background="White"
+                TextSize="11"
+                CornerRadius="4"
+                Padding="10,8">
+
+                                <!-- Форматирование текста тултипа -->
+                                <lvc:DefaultTooltip.LabelBuilder>
+                                    <Func x:TypeArguments="lvc:ChartPoint, IEnumerable">
+                                        <![CDATA[
+                                        (point) => 
+                            {
+                                if (point.Context.DataSource is WpfApp1.Models.ColumnChartData data)
+                                {
+                                    return new[] 
+                                    { 
+                                        $"Время: {data.Timestamp:HH:mm}",
+                                        $"Температура: {data.Temperature:F1}°C",
+                                        $"Длительность: {data.DurationMinutes:F1} мин"
+                                    };
+                                }
+                                return new[] { point.PrimaryValue.ToString() };
+                            }
+                        ]]>
+                                    </Func>
+                                </lvc:DefaultTooltip.LabelBuilder>
+                            </lvc:DefaultTooltip>
+                        </lvc:CartesianChart.Tooltip>
+                    </lvc:CartesianChart>
+                </Border>
+        </Border>
             </Grid>
         </Border>
 
