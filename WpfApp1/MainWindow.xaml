@@ -36,7 +36,6 @@
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
 
-        <!-- Базовый стиль для кнопок в правой панели -->
         <Style x:Key="RightPanelMenuButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
             <Setter Property="FontSize" Value="11"/>
             <Setter Property="Padding" Value="2"/>
@@ -44,14 +43,12 @@
             <Setter Property="Height" Value="32"/>
         </Style>
 
-        <!-- Стиль для светло-голубых кнопок компонентов -->
         <Style x:Key="LightBlueTopMenuButtonStyle" TargetType="Button" BasedOn="{StaticResource RightPanelMenuButtonStyle}">
             <Setter Property="Background" Value="#E3F2FD"/>
             <Setter Property="BorderBrush" Value="#BBDEFB"/>
             <Setter Property="Foreground" Value="#1565C0"/>
         </Style>
 
-        <!-- Стиль для кнопки СЧПУ (более темный оттенок) -->
         <Style x:Key="DarkBlueTopMenuButtonStyle" TargetType="Button" BasedOn="{StaticResource RightPanelMenuButtonStyle}">
             <Setter Property="Background" Value="#1976D2"/>
             <Setter Property="BorderBrush" Value="#1565C0"/>
@@ -125,7 +122,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Верхняя панель -->
         <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
             Margin="3" CornerRadius="5"
             Background="White" BorderBrush="#DADADA" BorderThickness="1">
@@ -136,7 +132,6 @@
                    Margin="10,0"/>
         </Border>
 
-        <!-- ЛЕВАЯ КОЛОНКА -->
         <Grid Grid.Row="1" Grid.Column="0" Margin="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -279,7 +274,6 @@
             </Border>
         </Grid>
 
-        <!-- ЦЕНТРАЛЬНАЯ КОЛОНКА -->
         <Grid Grid.Row="1" Grid.Column="1" Margin="0">
             <Border Margin="3" Background="White" BorderBrush="#A0A0A0" BorderThickness="1"
                     Visibility="{Binding IsMonitoringSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
@@ -341,7 +335,6 @@
             </Border>
         </Grid>
 
-        <!-- ПОСЛЕДНИЙ (ПРАВЫЙ) СТОЛБЕЦ -->
         <Border Grid.Row="1" Grid.Column="2" Margin="3" Background="#E0E0E0" BorderBrush="Gray" BorderThickness="1">
             <Grid>
                 <Grid.RowDefinitions>
@@ -351,17 +344,15 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <!-- Верхний заголовок -->
                 <TextBlock Grid.Row="0" 
                            Text="Текущие значения компонентов" 
                            FontSize="14" 
                            FontWeight="SemiBold" 
                            Foreground="#333333" 
-                           HorizontalAlignment="Center"/>
+                           HorizontalAlignment="Center"
+                           Margin="0,5"/>
 
-                <!-- Сетка кнопок в 2 ряда -->
                 <UniformGrid Grid.Row="1" Rows="2" Columns="6" Background="#E0E0E0" Margin="4, 10">
-                    <!-- Ряд 1 -->
                     <Button Content="Шпиндель" Style="{StaticResource LightBlueTopMenuButtonStyle}"/>
                     <Button Content="Ось X" Style="{StaticResource LightBlueTopMenuButtonStyle}"/>
                     <Button Content="Ось Y" Style="{StaticResource LightBlueTopMenuButtonStyle}"/>
@@ -369,38 +360,32 @@
                     <Button Content="Ось A" Style="{StaticResource LightBlueTopMenuButtonStyle}"/>
                     <Button Content="Ось B" Style="{StaticResource LightBlueTopMenuButtonStyle}"/>
 
-                    <!-- Ряд 2 -->
                     <Button Content="Панель оп." Style="{StaticResource LightBlueTopMenuButtonStyle}"/>
                     <Button Content="Пульт" Style="{StaticResource LightBlueTopMenuButtonStyle}"/>
                     <Button Content="Технология" Style="{StaticResource LightBlueTopMenuButtonStyle}"/>
                     <Button Content="Питание" Style="{StaticResource LightBlueTopMenuButtonStyle}"/>
-                    <Button Content="СЧПУ" Style="{StaticResource DarkBlueTopMenuButtonStyle}"/>
+                    <Button Content="СЧПУ" 
+                            Style="{StaticResource DarkBlueTopMenuButtonStyle}"
+                            Command="{Binding LoadMessagesCommand}"/>
+                    <Border Margin="2" Background="Transparent"/>
                 </UniformGrid>
 
-                <!-- Запрашиваемый текст под кнопками -->
                 <TextBlock Grid.Row="2" 
                            Text="Активные сообщения" 
                            FontSize="14" 
                            FontWeight="SemiBold" 
                            Foreground="#333333" 
-                           Margin="0, 30, 0, 0"
+                           Margin="0, 15, 0, 5"
                            HorizontalAlignment="Center"/>
 
                 <Grid Grid.Row="3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="165*"/>
-                        <ColumnDefinition Width="106*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-
-                    <DataGrid
-                              Name="table"
-                              Margin="50,10,50,100"
+                    <DataGrid Grid.Column="0" Grid.Row="0"
+                              Name="Table"
+                              ItemsSource="{Binding CncMessages}"
+                              Margin="20,0,20,20"
                               AutoGenerateColumns="False"
                               CanUserAddRows="False" CanUserDeleteRows="False"
-                              HeadersVisibility="Column" GridLinesVisibility="All" Grid.ColumnSpan="2">
+                              HeadersVisibility="Column" GridLinesVisibility="All">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Вид" Binding="{Binding View}" Width="40"/>
                             <DataGridTextColumn Header="Время" Binding="{Binding Time}" Width="80"/>

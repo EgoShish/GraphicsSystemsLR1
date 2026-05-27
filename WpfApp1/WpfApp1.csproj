@@ -159,6 +159,7 @@
     </ApplicationDefinition>
     <Compile Include="Converters\PathToImageConverter.cs" />
     <Compile Include="Models\LineChartModel.cs" />
+    <Compile Include="Models\TableMessageItem.cs" />
     <Compile Include="Models\TimePointModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Page Include="MainWindow.xaml">

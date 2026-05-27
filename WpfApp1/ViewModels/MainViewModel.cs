@@ -28,6 +28,10 @@ namespace WpfApp1.ViewModels
         public ObservableCollection<TimePointModel> AvailableTimeTo { get; } = new ObservableCollection<TimePointModel>();   // CB3: Время "ДО" (фильтруется)
 
         public ObservableCollection<LineChartModel> ChartData { get; } = new ObservableCollection<LineChartModel>();
+
+        // Коллекция для хранения активных сообщений СЧПУ
+        public ObservableCollection<TableMessageItem> CncMessages { get; } = new ObservableCollection<TableMessageItem>();
+
         public ISeries[] TemperatureSeries { get; private set; }
         public Axis[] XAxis { get; private set; }
         public Axis[] YAxis { get; private set; }
@@ -140,10 +144,33 @@ namespace WpfApp1.ViewModels
         public MainViewModel()
         {
             _db = new Database();
-            LoadMessagesCommand = new RelayCommand(() => { });
+            // Назначаем выполнение метода загрузки логов на команду
+            LoadMessagesCommand = new RelayCommand(LoadCncMessages);
             LoadLineChartCommand = new RelayCommand((LoadLineChart));
             LoadColumnChartCommand = new RelayCommand((LoadColumnChart));
             LoadMachineTypes();
+        }
+
+        // Метод загрузки активных сообщений из БД через ваш класс Database
+        private void LoadCncMessages()
+        {
+            CncMessages.Clear();
+            if (SelectedModel == null) return;
+
+            // Используем вашу встроенную функцию получения логов
+            DataTable dt = _db.GetMachineStatusLogs(SelectedModel.ClearName);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                CncMessages.Add(new TableMessageItem
+                {
+                    View = row["name"]?.ToString(),
+                    Time = DateTime.Now.ToString("HH:mm:ss"),
+                    Channel = row["status"]?.ToString(),
+                    Number = row["value"]?.ToString(),
+                    Text = row["description"]?.ToString()
+                });
+            }
         }
 
         private void LoadMachineTypes()
@@ -191,6 +218,8 @@ namespace WpfApp1.ViewModels
         {
             if (SelectedType == null || SelectedModel == null) return;
             HeaderText = $"{SelectedType.FullName}: {SelectedModel.FullName}";
+
+            // Здесь убран автоматический запуск LoadCncMessages(), чтобы таблица оставалась пустой до клика
             LoadTimePoints();
         }
         private void LoadTimePoints()
