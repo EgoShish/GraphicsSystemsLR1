@@ -1,4 +1,4 @@
-﻿using LiveChartsCore;
+using LiveChartsCore;
 using LiveChartsCore.Kernel;
 using LiveChartsCore.SkiaSharpView;
 using LiveChartsCore.SkiaSharpView.Painting;
@@ -31,6 +31,37 @@ namespace WpfApp1.ViewModels
         public ISeries[] TemperatureSeries { get; private set; }
         public Axis[] XAxis { get; private set; }
         public Axis[] YAxis { get; private set; }
+
+
+        // ПЕРЕМЕННЫЕ ДЛЯ СВОЙСТВ НАВИГАЦИИ БОКОВОГО МЕНЮ
+        private bool _isHomeSelected;
+        private bool _isMonitoringSelected = true; // Сделаем мониторинг активным по умолчанию
+        private bool _isAnalysisSelected;
+        private bool _isReportSelected;
+
+        public bool IsHomeSelected
+        {
+            get => _isHomeSelected;
+            set { _isHomeSelected = value; OnPropertyChanged(); }
+        }
+
+        public bool IsMonitoringSelected
+        {
+            get => _isMonitoringSelected;
+            set { _isMonitoringSelected = value; OnPropertyChanged(); }
+        }
+
+        public bool IsAnalysisSelected
+        {
+            get => _isAnalysisSelected;
+            set { _isAnalysisSelected = value; OnPropertyChanged(); }
+        }
+
+        public bool IsReportSelected
+        {
+            get => _isReportSelected;
+            set { _isReportSelected = value; OnPropertyChanged(); }
+        }
 
 
         // Переменные с событиями
@@ -86,8 +117,9 @@ namespace WpfApp1.ViewModels
         public TimePointModel SelectedTimeFrom
         {
             get => _selectedTimeFrom;
-            set { 
-                _selectedTimeFrom = value; 
+            set
+            {
+                _selectedTimeFrom = value;
                 OnPropertyChanged();
                 UpdateTimeToCollection();
             }
@@ -255,12 +287,12 @@ namespace WpfApp1.ViewModels
         }
         private void BuildChartSeries()
         {
-            // 🔥 Серия температуры с правильным Mapping
+            // Серия температуры с правильным Mapping
             var tempSeries = new LineSeries<LineChartModel>
             {
                 Values = ChartData,
 
-                // ✅ Правильный синтаксис: один Mapping, возвращающий (X, Y)
+                // Правильный синтаксис: один Mapping, возвращающий (X, Y)
                 Mapping = (point, index) => new Coordinate(point.Minutes, point.Temperature),
 
                 Name = "Температура, °C",
@@ -282,30 +314,29 @@ namespace WpfApp1.ViewModels
 
             TemperatureSeries = new ISeries[] { tempSeries, speedSeries };
 
-            // 🔥 Ось X: используем старую синтаксическую форму для совместимости
+            // Ось X: используем старую синтаксическую форму для совместимости
             XAxis = new Axis[]
             {
-        new Axis
-        {
-            Name = "Время, мин",
-            LabelsRotation = 0,
-            SeparatorsPaint = new SolidColorPaint(SKColors.LightGray) { StrokeThickness = 1 },
-            // ⚠️ В LiveCharts2 это TextSize, а не FontSize!
-            LabelsPaint = new SolidColorPaint(SKColors.DarkGray) {}
-        }
+                new Axis
+                {
+                    Name = "Время, мин",
+                    LabelsRotation = 0,
+                    SeparatorsPaint = new SolidColorPaint(SKColors.LightGray) { StrokeThickness = 1 },
+                    LabelsPaint = new SolidColorPaint(SKColors.DarkGray) {}
+                }
             };
 
-            // 🔥 Ось Y
+            // Ось Y
             YAxis = new Axis[]
             {
-        new Axis
-        {
-            Name = "Температура, °C",
-            SeparatorsPaint = new SolidColorPaint(SKColors.LightGray) { StrokeThickness = 1 },
-            LabelsPaint = new SolidColorPaint(SKColors.DarkGray) {},
-            MinLimit = 0,
-            MaxLimit = 100
-        }
+                new Axis
+                {
+                    Name = "Температура, °C",
+                    SeparatorsPaint = new SolidColorPaint(SKColors.LightGray) { StrokeThickness = 1 },
+                    LabelsPaint = new SolidColorPaint(SKColors.DarkGray) {},
+                    MinLimit = 0,
+                    MaxLimit = 100
+                }
             };
 
             // Уведомляем интерфейс
@@ -318,7 +349,6 @@ namespace WpfApp1.ViewModels
             if (SelectedTimeFrom == null || SelectedTimeTo == null) return;
 
             System.Diagnostics.Debug.WriteLine($"[CHART] Столбчатый график: {SelectedTimeFrom.SqlParam} → {SelectedTimeTo.SqlParam}");
-            // Здесь будет логика стекирования температур по цветам (как в вашем WinForms коде)
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
@@ -16,7 +16,7 @@ namespace WpfApp1
 
         public Database()
         {
-            connection = new MySqlConnection("Server=localhost; Database=stankidb; User ID=root; Password=root");
+            connection = new MySqlConnection("Server=localhost; Database=stankidb; User ID=root; Password=1711000");
             adapter = new MySqlDataAdapter();
         }
         public void OpenConnection()
