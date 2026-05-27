@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:converters="clr-namespace:WpfApp1.Converters"
+        xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
         mc:Ignorable="d"
         Title="АксиОМА Контрол"
         MinWidth="1200" MinHeight="800"
@@ -14,6 +15,25 @@
     <Window.Resources>
         <!-- Регистрируем конвертер под ключом "PathToImageConverter" -->
         <converters:PathToImageConverter x:Key="PathToImageConverter"/>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="Foreground" Value="#404040"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Background" Value="#C0C0C0"/>
+            <Setter Property="BorderBrush" Value="#B0B0B0"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+        <!-- Голубая кнопка (наследуется от базового) -->
+        <Style x:Key="BlueButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Background" Value="#A9C9FF"/>
+        </Style>
+
+        <!-- Зелёная кнопка осей -->
+        <Style x:Key="AxisButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Background" Value="#C0FFC0"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
     </Window.Resources>
     <Grid Margin="3">
         <!-- Определяем сетку: 3 колонки, несколько строк -->
@@ -75,8 +95,54 @@
         </Grid>
 
         <!-- 3. ЦЕНТРАЛЬНАЯ И ПРАВАЯ ЧАСТИ (Пока пустые заглушки) -->
-        <Border Grid.Row="1" Grid.Column="1" Margin="3" Background="#E0E0E0" BorderBrush="Gray" BorderThickness="1">
-            <TextBlock Text="График 1 (Центр)" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Border Grid.Row="1" Grid.Column="1" Margin="3" 
+        Background="White" BorderBrush="#A0A0A0" BorderThickness="1">
+            <Grid>
+                <!-- 2 строки: Панель управления (~20% контента) и График (всё остальное) -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" MinHeight="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Верхняя панель: 3 комбобокса + кнопка -->
+                <Grid Grid.Row="0" Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <!-- Пропорции для комбобоксов: 20% - 40% - 40% -->
+                        <ColumnDefinition Width="0.2*"/>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <!-- Кнопка займёт ровно столько, сколько нужно -->
+                    </Grid.ColumnDefinitions>
+
+                    <ComboBox Grid.Column="0" Margin="3" Height="30"
+                      ItemsSource="{Binding UniqueDates}"
+                      SelectedItem="{Binding SelectedDate}"
+                      DisplayMemberPath="DateDisplay"/>
+
+                    <ComboBox Grid.Column="1" Margin="3" Height="30"
+                      ItemsSource="{Binding AvailableTimeFrom}"
+                      SelectedItem="{Binding SelectedTimeFrom}"
+                      DisplayMemberPath="FullDisplay"/>
+
+                    <ComboBox Grid.Column="2" Margin="3" Height="30"
+                      ItemsSource="{Binding AvailableTimeTo}"
+                      SelectedItem="{Binding SelectedTimeTo}"
+                      DisplayMemberPath="FullDisplay"/>
+
+                    <Button Grid.Column="3" Margin="3" Height="30" Padding="15,0"
+                    Content="Вывод" Style="{StaticResource BlueButtonStyle}"
+                    Command="{Binding LoadLineChartCommand}"/>
+                </Grid>
+
+                <!-- График (занимает всё оставшееся место) -->
+                <lvc:CartesianChart Grid.Row="1" Margin="5"
+                            Series="{Binding TemperatureSeries}"
+                            XAxes="{Binding XAxis}"
+                            YAxes="{Binding YAxis}"
+                            ZoomMode="X"
+                            TooltipPosition="Bottom"/>
+            </Grid>
         </Border>
 
         <Border Grid.Row="1" Grid.Column="2" Margin="3" Background="#E0E0E0" BorderBrush="Gray" BorderThickness="1">
