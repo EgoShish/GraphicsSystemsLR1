@@ -36,6 +36,31 @@
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
 
+        <Style x:Key="IconButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#D9D9D9"/>
+            <Setter Property="BorderBrush" Value="#A0A0A0"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="8">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#CCCCCC"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <Style x:Key="NavigationMenuButtonStyle" TargetType="RadioButton">
             <Setter Property="GroupName" Value="MainMenu"/>
             <Setter Property="Height" Value="45"/>
@@ -100,6 +125,8 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -133,10 +160,104 @@
                   DisplayMemberPath="FullName"/>
 
             <Border Grid.Row="6" Margin="3" 
-                BorderThickness="2" BorderBrush="#A0A0A0" 
-                Background="White" MinHeight="100">
+                BorderThickness="1" BorderBrush="#A0A0A0" 
+                Background="White" Height="220">
                 <Image Source="{Binding SelectedModel.ImageName, 
-                    Converter={StaticResource PathToImageConverter}}"/>
+                    Converter={StaticResource PathToImageConverter}}" Margin="5"/>
+            </Border>
+
+            <Border Grid.Row="7" Margin="3,5,3,3" BorderBrush="Black" BorderThickness="1" Background="White">
+                <StackPanel>
+
+                    <UniformGrid Columns="4" Margin="2">
+                        <Button Style="{StaticResource IconButtonStyle}">
+                            <Viewbox Width="30" Height="30">
+                                <Canvas Width="24" Height="24">
+                                    <Path Stroke="Black" StrokeThickness="2" StrokeLineJoin="Round" 
+                                          Data="M2,6 H16 A2,2 0 0 1 18,8 V16 A2,2 0 0 1 16,18 H2 A2,2 0 0 1 0,16 V8 A2,2 0 0 1 2,6 Z"/>
+                                    <Path Fill="Black" Data="M18,9 L24,5 V19 L18,15 Z"/>
+                                </Canvas>
+                            </Viewbox>
+                        </Button>
+
+                        <Button Style="{StaticResource IconButtonStyle}">
+                            <Viewbox Width="28" Height="28">
+                                <Canvas Width="24" Height="24">
+                                    <Path Stroke="Black" StrokeThickness="2" StrokeLineJoin="Round"
+                                          Data="M4,2 H14 L20,8 V22 H4 Z"/>
+                                    <Path Stroke="Black" StrokeThickness="2" Data="M14,2 V8 H20"/>
+                                </Canvas>
+                            </Viewbox>
+                        </Button>
+
+                        <Button Style="{StaticResource IconButtonStyle}">
+                            <Viewbox Width="26" Height="26">
+                                <Canvas Width="24" Height="24">
+                                    <Path Stroke="Black" StrokeThickness="2" StrokeLineJoin="Round"
+                                          Data="M10,3 H3 V21 H10"/>
+                                    <Path Stroke="Black" StrokeThickness="2" StrokeLineJoin="Round"
+                                          Data="M21,12 H9 M13,8 L9,12 L13,16"/>
+                                </Canvas>
+                            </Viewbox>
+                        </Button>
+
+                        <Button Style="{StaticResource IconButtonStyle}">
+                            <Viewbox Width="26" Height="26">
+                                <Canvas Width="24" Height="24">
+                                    <Path Stroke="Black" StrokeThickness="2" StrokeLineJoin="Round"
+                                          Data="M14,3 H21 V21 H14"/>
+                                    <Path Stroke="Black" StrokeThickness="2" StrokeLineJoin="Round"
+                                          Data="M3,12 H15 M11,8 L15,12 L11,16"/>
+                                </Canvas>
+                            </Viewbox>
+                        </Button>
+                    </UniformGrid>
+
+                    <Separator Height="1" Background="Black" Margin="0,2"/>
+
+                    <Grid Height="45" Background="White">
+                        <TextBlock Text="{Binding SelectedModel.ClearName}" 
+                                   Foreground="#D2C1B0" FontWeight="Bold" FontSize="20" 
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,2,0,0"/>
+                        <TextBlock Text="{Binding SelectedModel.ClearName}" 
+                                   Foreground="#6B2D2D" FontWeight="Bold" FontSize="20" 
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+
+                    <Separator Height="1" Background="Black" Margin="0,2"/>
+
+                    <Grid Height="35">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="65"/>
+                        </Grid.ColumnDefinitions>
+
+                        <UniformGrid Grid.Column="0" Columns="6" Background="#52BE94">
+                            <Border BorderBrush="Black" BorderThickness="0,0,1,0">
+                                <TextBlock Text="X" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="0,0,1,0">
+                                <TextBlock Text="Y" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="0,0,1,0">
+                                <TextBlock Text="Z" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="0,0,1,0">
+                                <TextBlock Text="C" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="0,0,1,0">
+                                <TextBlock Text="A" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <Border>
+                                <TextBlock Text="B" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </UniformGrid>
+
+                        <Border Grid.Column="1" Background="#4D66FF" BorderBrush="Black" BorderThickness="1,0,0,0">
+                            <TextBlock Text="Авто" Foreground="White" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+                </StackPanel>
             </Border>
         </Grid>
 
