@@ -36,26 +36,43 @@
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
 
-        <Style x:Key="IconButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="#D9D9D9"/>
-            <Setter Property="BorderBrush" Value="#A0A0A0"/>
-            <Setter Property="BorderThickness" Value="1"/>
+        <!-- Базовый стиль для кнопок в правой панели -->
+        <Style x:Key="RightPanelMenuButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="Padding" Value="2"/>
             <Setter Property="Margin" Value="2"/>
-            <Setter Property="Height" Value="60"/>
+            <Setter Property="Height" Value="32"/>
+        </Style>
+
+        <!-- Стиль для светло-голубых кнопок компонентов -->
+        <Style x:Key="LightBlueTopMenuButtonStyle" TargetType="Button" BasedOn="{StaticResource RightPanelMenuButtonStyle}">
+            <Setter Property="Background" Value="#E3F2FD"/>
+            <Setter Property="BorderBrush" Value="#BBDEFB"/>
+            <Setter Property="Foreground" Value="#1565C0"/>
+        </Style>
+
+        <!-- Стиль для кнопки СЧПУ (более темный оттенок) -->
+        <Style x:Key="DarkBlueTopMenuButtonStyle" TargetType="Button" BasedOn="{StaticResource RightPanelMenuButtonStyle}">
+            <Setter Property="Background" Value="#1976D2"/>
+            <Setter Property="BorderBrush" Value="#1565C0"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+
+        <Style x:Key="DisabledIconButtonStyle" TargetType="Button">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="IsEnabled" Value="False"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" 
-                                BorderBrush="{TemplateBinding BorderBrush}" 
-                                BorderThickness="{TemplateBinding BorderThickness}" 
-                                CornerRadius="8">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Border Background="#D9D9D9" 
+                                BorderBrush="#A0A0A0" 
+                                BorderThickness="1" 
+                                CornerRadius="6">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
                         </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#CCCCCC"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -108,15 +125,18 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <!-- Верхняя панель -->
         <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
             Margin="3" CornerRadius="5"
             Background="White" BorderBrush="#DADADA" BorderThickness="1">
             <Label Content="{Binding HeaderText}"
-               FontSize="22" FontWeight="SemiBold"
-               HorizontalContentAlignment="Center"
-               VerticalContentAlignment="Center"/>
+                   FontSize="20" FontWeight="SemiBold"
+                   HorizontalContentAlignment="Left"
+                   VerticalContentAlignment="Center"
+                   Margin="10,0"/>
         </Border>
 
+        <!-- ЛЕВАЯ КОЛОНКА -->
         <Grid Grid.Row="1" Grid.Column="0" Margin="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -125,9 +145,8 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="4*"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
             <StackPanel Grid.Row="0" Margin="0,0,0,10">
@@ -161,17 +180,16 @@
 
             <Border Grid.Row="6" Margin="3" 
                 BorderThickness="1" BorderBrush="#A0A0A0" 
-                Background="White" Height="220">
+                Background="White">
                 <Image Source="{Binding SelectedModel.ImageName, 
-                    Converter={StaticResource PathToImageConverter}}" Margin="5"/>
+                     Converter={StaticResource PathToImageConverter}}" Margin="5"/>
             </Border>
 
-            <Border Grid.Row="7" Margin="3,5,3,3" BorderBrush="Black" BorderThickness="1" Background="White">
+            <Border Grid.Row="7" Margin="3,5,3,3" BorderBrush="Black" BorderThickness="1" Background="White" VerticalAlignment="Bottom">
                 <StackPanel>
-
                     <UniformGrid Columns="4" Margin="2">
-                        <Button Style="{StaticResource IconButtonStyle}">
-                            <Viewbox Width="30" Height="30">
+                        <Button Style="{StaticResource DisabledIconButtonStyle}">
+                            <Viewbox Width="24" Height="24">
                                 <Canvas Width="24" Height="24">
                                     <Path Stroke="Black" StrokeThickness="2" StrokeLineJoin="Round" 
                                           Data="M2,6 H16 A2,2 0 0 1 18,8 V16 A2,2 0 0 1 16,18 H2 A2,2 0 0 1 0,16 V8 A2,2 0 0 1 2,6 Z"/>
@@ -180,8 +198,8 @@
                             </Viewbox>
                         </Button>
 
-                        <Button Style="{StaticResource IconButtonStyle}">
-                            <Viewbox Width="28" Height="28">
+                        <Button Style="{StaticResource DisabledIconButtonStyle}">
+                            <Viewbox Width="22" Height="22">
                                 <Canvas Width="24" Height="24">
                                     <Path Stroke="Black" StrokeThickness="2" StrokeLineJoin="Round"
                                           Data="M4,2 H14 L20,8 V22 H4 Z"/>
@@ -190,8 +208,8 @@
                             </Viewbox>
                         </Button>
 
-                        <Button Style="{StaticResource IconButtonStyle}">
-                            <Viewbox Width="26" Height="26">
+                        <Button Style="{StaticResource DisabledIconButtonStyle}">
+                            <Viewbox Width="22" Height="22">
                                 <Canvas Width="24" Height="24">
                                     <Path Stroke="Black" StrokeThickness="2" StrokeLineJoin="Round"
                                           Data="M10,3 H3 V21 H10"/>
@@ -201,8 +219,8 @@
                             </Viewbox>
                         </Button>
 
-                        <Button Style="{StaticResource IconButtonStyle}">
-                            <Viewbox Width="26" Height="26">
+                        <Button Style="{StaticResource DisabledIconButtonStyle}">
+                            <Viewbox Width="22" Height="22">
                                 <Canvas Width="24" Height="24">
                                     <Path Stroke="Black" StrokeThickness="2" StrokeLineJoin="Round"
                                           Data="M14,3 H21 V21 H14"/>
@@ -215,12 +233,12 @@
 
                     <Separator Height="1" Background="Black" Margin="0,2"/>
 
-                    <Grid Height="45" Background="White">
+                    <Grid Height="40" Background="White">
                         <TextBlock Text="{Binding SelectedModel.ClearName}" 
-                                   Foreground="#D2C1B0" FontWeight="Bold" FontSize="20" 
-                                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,2,0,0"/>
+                                   Foreground="#D2C1B0" FontWeight="Bold" FontSize="18" 
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1,1,0,0"/>
                         <TextBlock Text="{Binding SelectedModel.ClearName}" 
-                                   Foreground="#6B2D2D" FontWeight="Bold" FontSize="20" 
+                                   Foreground="#6B2D2D" FontWeight="Bold" FontSize="18" 
                                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Grid>
 
@@ -229,38 +247,39 @@
                     <Grid Height="35">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="65"/>
+                            <ColumnDefinition Width="60"/>
                         </Grid.ColumnDefinitions>
 
                         <UniformGrid Grid.Column="0" Columns="6" Background="#52BE94">
                             <Border BorderBrush="Black" BorderThickness="0,0,1,0">
-                                <TextBlock Text="X" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Text="X" Foreground="Black" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
                             <Border BorderBrush="Black" BorderThickness="0,0,1,0">
-                                <TextBlock Text="Y" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Text="Y" Foreground="Black" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
                             <Border BorderBrush="Black" BorderThickness="0,0,1,0">
-                                <TextBlock Text="Z" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Text="Z" Foreground="Black" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
                             <Border BorderBrush="Black" BorderThickness="0,0,1,0">
-                                <TextBlock Text="C" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Text="C" Foreground="Black" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
                             <Border BorderBrush="Black" BorderThickness="0,0,1,0">
-                                <TextBlock Text="A" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Text="A" Foreground="Black" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
                             <Border>
-                                <TextBlock Text="B" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Text="B" Foreground="Black" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
                         </UniformGrid>
 
                         <Border Grid.Column="1" Background="#4D66FF" BorderBrush="Black" BorderThickness="1,0,0,0">
-                            <TextBlock Text="Авто" Foreground="White" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Авто" Foreground="White" FontWeight="Bold" FontSize="13" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                 </StackPanel>
             </Border>
         </Grid>
 
+        <!-- ЦЕНТРАЛЬНАЯ КОЛОНКА -->
         <Grid Grid.Row="1" Grid.Column="1" Margin="0">
             <Border Margin="3" Background="White" BorderBrush="#A0A0A0" BorderThickness="1"
                     Visibility="{Binding IsMonitoringSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
@@ -294,8 +313,8 @@
                           DisplayMemberPath="FullDisplay"/>
 
                         <Button Grid.Column="3" Margin="3" Height="30" Padding="15,0"
-                        Content="Вывод" Style="{StaticResource BlueButtonStyle}"
-                        Command="{Binding LoadLineChartCommand}"/>
+                          Content="Вывод" Style="{StaticResource BlueButtonStyle}"
+                          Command="{Binding LoadLineChartCommand}"/>
                     </Grid>
 
                     <lvc:CartesianChart Grid.Row="1" Margin="5"
@@ -319,12 +338,80 @@
 
             <Border Margin="3" Background="White" BorderBrush="#A0A0A0" BorderThickness="1"
                     Visibility="{Binding IsReportSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
-                <TextBlock Text="Экран: Отчеты" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="Gray"/>
             </Border>
         </Grid>
 
+        <!-- ПОСЛЕДНИЙ (ПРАВЫЙ) СТОЛБЕЦ -->
         <Border Grid.Row="1" Grid.Column="2" Margin="3" Background="#E0E0E0" BorderBrush="Gray" BorderThickness="1">
-            <TextBlock Text="Панель справа" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Верхний заголовок -->
+                <TextBlock Grid.Row="0" 
+                           Text="Текущие значения компонентов" 
+                           FontSize="14" 
+                           FontWeight="SemiBold" 
+                           Foreground="#333333" 
+                           HorizontalAlignment="Center"/>
+
+                <!-- Сетка кнопок в 2 ряда -->
+                <UniformGrid Grid.Row="1" Rows="2" Columns="6" Background="#E0E0E0" Margin="4, 10">
+                    <!-- Ряд 1 -->
+                    <Button Content="Шпиндель" Style="{StaticResource LightBlueTopMenuButtonStyle}"/>
+                    <Button Content="Ось X" Style="{StaticResource LightBlueTopMenuButtonStyle}"/>
+                    <Button Content="Ось Y" Style="{StaticResource LightBlueTopMenuButtonStyle}"/>
+                    <Button Content="Ось Z" Style="{StaticResource LightBlueTopMenuButtonStyle}"/>
+                    <Button Content="Ось A" Style="{StaticResource LightBlueTopMenuButtonStyle}"/>
+                    <Button Content="Ось B" Style="{StaticResource LightBlueTopMenuButtonStyle}"/>
+
+                    <!-- Ряд 2 -->
+                    <Button Content="Панель оп." Style="{StaticResource LightBlueTopMenuButtonStyle}"/>
+                    <Button Content="Пульт" Style="{StaticResource LightBlueTopMenuButtonStyle}"/>
+                    <Button Content="Технология" Style="{StaticResource LightBlueTopMenuButtonStyle}"/>
+                    <Button Content="Питание" Style="{StaticResource LightBlueTopMenuButtonStyle}"/>
+                    <Button Content="СЧПУ" Style="{StaticResource DarkBlueTopMenuButtonStyle}"/>
+                </UniformGrid>
+
+                <!-- Запрашиваемый текст под кнопками -->
+                <TextBlock Grid.Row="2" 
+                           Text="Активные сообщения" 
+                           FontSize="14" 
+                           FontWeight="SemiBold" 
+                           Foreground="#333333" 
+                           Margin="0, 30, 0, 0"
+                           HorizontalAlignment="Center"/>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="165*"/>
+                        <ColumnDefinition Width="106*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <DataGrid
+                              Name="table"
+                              Margin="50,10,50,100"
+                              AutoGenerateColumns="False"
+                              CanUserAddRows="False" CanUserDeleteRows="False"
+                              HeadersVisibility="Column" GridLinesVisibility="All" Grid.ColumnSpan="2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Вид" Binding="{Binding View}" Width="40"/>
+                            <DataGridTextColumn Header="Время" Binding="{Binding Time}" Width="80"/>
+                            <DataGridTextColumn Header="Канал" Binding="{Binding Channel}" Width="60"/>
+                            <DataGridTextColumn Header="Номер" Binding="{Binding Number}" Width="60"/>
+                            <DataGridTextColumn Header="Текст" Binding="{Binding Text}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
+            </Grid>
         </Border>
     </Grid>
 </Window>
