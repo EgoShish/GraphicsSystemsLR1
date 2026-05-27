@@ -1,20 +1,20 @@
-﻿using LiveChartsCore;
-using LiveChartsCore.Kernel;
-using LiveChartsCore.SkiaSharpView;
-using LiveChartsCore.SkiaSharpView.Painting;
-using SkiaSharp;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using System.Windows;
-using WpfApp1.Commands;
-using WpfApp1.Models;
+using WPF2.Commands;
+using WPF2.Models;
+using LiveChartsCore.SkiaSharpView;
+using LiveChartsCore.SkiaSharpView.Painting;
+using SkiaSharp;
+using LiveChartsCore;
 
-namespace WpfApp1.ViewModels
+namespace WPF2.ViewModels
 {
     public class MainViewModel : NotifyModel
     {
@@ -86,8 +86,9 @@ namespace WpfApp1.ViewModels
         public TimePointModel SelectedTimeFrom
         {
             get => _selectedTimeFrom;
-            set { 
-                _selectedTimeFrom = value; 
+            set
+            {
+                _selectedTimeFrom = value;
                 OnPropertyChanged();
                 UpdateTimeToCollection();
             }
@@ -255,34 +256,36 @@ namespace WpfApp1.ViewModels
         }
         private void BuildChartSeries()
         {
-            // 🔥 Серия температуры с правильным Mapping
+            // 🔥 Серия температуры (красная, левая ось)
             var tempSeries = new LineSeries<LineChartModel>
             {
                 Values = ChartData,
-
-                // ✅ Правильный синтаксис: один Mapping, возвращающий (X, Y)
-                Mapping = (point, index) => new Coordinate(point.Minutes, (double)point.Temperature),
-
+                Mapping = (point, index) => new(point.Minutes, point.Temperature),
                 Name = "Температура, °C",
-                Stroke = new SolidColorPaint(SKColors.Red) { StrokeThickness = 2 },
-                Fill = null,
+                Stroke = new SolidColorPaint(SKColors.Red) { StrokeThickness = 2.5f },
+                Fill = new SolidColorPaint(SKColors.Red) {}, // Лёгкая заливка под линией
                 GeometryFill = new SolidColorPaint(SKColors.Red),
-                GeometryStroke = new SolidColorPaint(SKColors.Red) { StrokeThickness = 2 }
+                GeometryStroke = new SolidColorPaint(SKColors.Red) { StrokeThickness = 2 },
+                YAxesIndex = 0 // Привязываем к первой оси (температура)
             };
 
-            // Если нужна вторая серия (скорость)
+            // 🔥 Серия скорости (синяя, правая ось)
             var speedSeries = new LineSeries<LineChartModel>
             {
                 Values = ChartData,
-                Mapping = (point, index) => new Coordinate(point.Minutes, (double)(point.Speed ?? 0)),
+                Mapping = (point, index) => new(point.Minutes, point.Speed ?? 0),
                 Name = "Скорость, об/мин",
-                Stroke = new SolidColorPaint(SKColors.Blue) { StrokeThickness = 2 },
-                IsVisibleAtLegend = false // Скрыта по умолчанию
+                Stroke = new SolidColorPaint(SKColors.Blue) { StrokeThickness = 2.5f },
+                Fill = new SolidColorPaint(SKColors.Blue) { },
+                GeometryFill = new SolidColorPaint(SKColors.Blue),
+                GeometryStroke = new SolidColorPaint(SKColors.Blue) { StrokeThickness = 2 },
+                YAxesIndex = 1, // Привязываем ко второй оси (скорость)
+                IsVisibleAtLegend = true
             };
 
             TemperatureSeries = new ISeries[] { tempSeries, speedSeries };
 
-            // 🔥 Ось X: используем старую синтаксическую форму для совместимости
+            // 🔥 Ось X (общая для обеих серий)
             XAxis = new Axis[]
             {
         new Axis
@@ -290,25 +293,42 @@ namespace WpfApp1.ViewModels
             Name = "Время, мин",
             LabelsRotation = 0,
             SeparatorsPaint = new SolidColorPaint(SKColors.LightGray) { StrokeThickness = 1 },
-            // ⚠️ В LiveCharts2 это TextSize, а не FontSize!
-            LabelsPaint = new SolidColorPaint(SKColors.DarkGray) {}
+            LabelsPaint = new SolidColorPaint(SKColors.DarkGray) {},
+            MinLimit = 0,
+            // Динамический максимум (опционально)
+            // MaxLimit = ChartData.Any() ? ChartData.Max(p => p.Minutes) * 1.05 : 100
         }
             };
 
-            // 🔥 Ось Y
+            // 🔥 Ось Y1: Температура (слева)
+            // 🔥 Ось Y2: Скорость (справа)
             YAxis = new Axis[]
             {
+        // Ось 0: Температура
         new Axis
         {
             Name = "Температура, °C",
+            Position = LiveChartsCore.Measure.AxisPosition.Start, // Слева
             SeparatorsPaint = new SolidColorPaint(SKColors.LightGray) { StrokeThickness = 1 },
-            LabelsPaint = new SolidColorPaint(SKColors.DarkGray) {},
+            LabelsPaint = new SolidColorPaint(SKColors.Red) {},
             MinLimit = 0,
-            MaxLimit = 100
+            MaxLimit = 100,
+            Padding = new LiveChartsCore.Measure.Margin(3f, 3f, 3, 3f) // Отступ от края
+        },
+        // Ось 1: Скорость
+        new Axis
+        {
+            Name = "Скорость, об/мин",
+            Position = LiveChartsCore.Measure.AxisPosition.End, // Справа
+            SeparatorsPaint = new SolidColorPaint(SKColors.LightGray) { StrokeThickness = 1 },
+            LabelsPaint = new SolidColorPaint(SKColors.Blue) {},
+            MinLimit = 0,
+            MaxLimit = 3000, // Подставьте ваш максимум
+            Padding = new LiveChartsCore.Measure.Padding(10, 0, 0, 0)
         }
             };
 
-            // Уведомляем интерфейс
+            // 🔥 Уведомляем интерфейс
             OnPropertyChanged(nameof(TemperatureSeries));
             OnPropertyChanged(nameof(XAxis));
             OnPropertyChanged(nameof(YAxis));
