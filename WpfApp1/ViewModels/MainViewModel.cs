@@ -23,13 +23,13 @@ namespace WpfApp1.ViewModels
         public ObservableCollection<ItemExtractorModel> MachineModels { get; } = new ObservableCollection<ItemExtractorModel>();
 
         private List<TimePointModel> _allTimePoints = new List<TimePointModel>();
-        public ObservableCollection<TimePointModel> UniqueDates { get; } = new ObservableCollection<TimePointModel>();      // CB1: Даты
-        public ObservableCollection<TimePointModel> AvailableTimeFrom { get; } = new ObservableCollection<TimePointModel>(); // CB2: Время "ОТ"
-        public ObservableCollection<TimePointModel> AvailableTimeTo { get; } = new ObservableCollection<TimePointModel>();   // CB3: Время "ДО" (фильтруется)
+        public ObservableCollection<TimePointModel> UniqueDates { get; } = new ObservableCollection<TimePointModel>();//CB1: Даты
+        public ObservableCollection<TimePointModel> AvailableTimeFrom { get; } = new ObservableCollection<TimePointModel>();//CB2: Время "ОТ"
+        public ObservableCollection<TimePointModel> AvailableTimeTo { get; } = new ObservableCollection<TimePointModel>();//CB3: Время "ДО" 
 
         public ObservableCollection<LineChartModel> ChartData { get; } = new ObservableCollection<LineChartModel>();
 
-        // Коллекция для хранения активных сообщений СЧПУ
+        //хранение активных сообщений счпу
         public ObservableCollection<TableMessageItem> CncMessages { get; } = new ObservableCollection<TableMessageItem>();
 
         public ISeries[] TemperatureSeries { get; private set; }
@@ -37,9 +37,9 @@ namespace WpfApp1.ViewModels
         public Axis[] YAxis { get; private set; }
 
 
-        // ПЕРЕМЕННЫЕ ДЛЯ СВОЙСТВ НАВИГАЦИИ БОКОВОГО МЕНЮ
+        
         private bool _isHomeSelected;
-        private bool _isMonitoringSelected = true; // Сделаем мониторинг активным по умолчанию
+        private bool _isMonitoringSelected = true;
         private bool _isAnalysisSelected;
         private bool _isReportSelected;
 
@@ -67,8 +67,6 @@ namespace WpfApp1.ViewModels
             set { _isReportSelected = value; OnPropertyChanged(); }
         }
 
-
-        // Переменные с событиями
         private string _headerText = "Выберите станок";
         public string HeaderText
         {
@@ -85,7 +83,7 @@ namespace WpfApp1.ViewModels
                 {
                     _selectedType = value;
                     OnPropertyChanged();
-                    LoadModelsByType(); // Как только выбрали тип -> грузим модели
+                    LoadModelsByType();
                 }
             }
         }
@@ -99,7 +97,7 @@ namespace WpfApp1.ViewModels
                 {
                     _selectedModel = value;
                     OnPropertyChanged();
-                    OnModelSelected(); // Как только выбрали модель -> обновляем заголовок
+                    OnModelSelected();
                 }
             }
         }
@@ -113,7 +111,7 @@ namespace WpfApp1.ViewModels
                 {
                     _selectedDate = value;
                     OnPropertyChanged();
-                    UpdateTimeFromCollection(); // При смене даты фильтруем время
+                    UpdateTimeFromCollection();
                 }
             }
         }
@@ -144,20 +142,18 @@ namespace WpfApp1.ViewModels
         public MainViewModel()
         {
             _db = new Database();
-            // Назначаем выполнение метода загрузки логов на команду
             LoadMessagesCommand = new RelayCommand(LoadCncMessages);
             LoadLineChartCommand = new RelayCommand((LoadLineChart));
             LoadColumnChartCommand = new RelayCommand((LoadColumnChart));
             LoadMachineTypes();
         }
 
-        // Метод загрузки активных сообщений из БД через ваш класс Database
+        //загрузки активных сообщений из БД 
         private void LoadCncMessages()
         {
             CncMessages.Clear();
             if (SelectedModel == null) return;
 
-            // Используем вашу встроенную функцию получения логов
             DataTable dt = _db.GetMachineStatusLogs(SelectedModel.ClearName);
 
             foreach (DataRow row in dt.Rows)
@@ -219,7 +215,6 @@ namespace WpfApp1.ViewModels
             if (SelectedType == null || SelectedModel == null) return;
             HeaderText = $"{SelectedType.FullName}: {SelectedModel.FullName}";
 
-            // Здесь убран автоматический запуск LoadCncMessages(), чтобы таблица оставалась пустой до клика
             LoadTimePoints();
         }
         private void LoadTimePoints()
@@ -237,7 +232,7 @@ namespace WpfApp1.ViewModels
                 .Select(p => p.Value.Date)
                 .Distinct()
                 .OrderBy(d => d)
-                .Select(d => new TimePointModel { Value = d }); // Создаём новые объекты с временем 00:00
+                .Select(d => new TimePointModel { Value = d });
 
             foreach (var day in uniqueDays)
                 UniqueDates.Add(day);
@@ -247,13 +242,12 @@ namespace WpfApp1.ViewModels
         private void UpdateTimeFromCollection()
         {
             AvailableTimeFrom.Clear();
-            AvailableTimeTo.Clear(); // Очищаем "ДО", пока нет выбора "ОТ"
+            AvailableTimeTo.Clear();
 
             if (SelectedDate == null) return;
 
             var targetDay = SelectedDate.Value.Date;
 
-            // Берём все метки выбранного дня, сортируем по времени
             var timesOfDay = _allTimePoints
                 .Where(p => p.Value.Date == targetDay)
                 .OrderBy(p => p.Value)
@@ -262,7 +256,6 @@ namespace WpfApp1.ViewModels
             foreach (var t in timesOfDay)
                 AvailableTimeFrom.Add(t);
 
-            // Автовыбор первой доступной метки как "ОТ" (запустит следующий каскад)
             if (AvailableTimeFrom.Any())
                 SelectedTimeFrom = AvailableTimeFrom[0];
         }
@@ -272,7 +265,6 @@ namespace WpfApp1.ViewModels
 
             if (SelectedTimeFrom == null) return;
 
-            // Фильтруем: показываем только метки >= выбранного "ОТ"
             var validToTimes = _allTimePoints
                 .Where(p => p.Value >= SelectedTimeFrom.Value)
                 .OrderBy(p => p.Value)
@@ -281,7 +273,6 @@ namespace WpfApp1.ViewModels
             foreach (var t in validToTimes)
                 AvailableTimeTo.Add(t);
 
-            // Автовыбор последней доступной метки как "ДО" (чтобы охватить максимум)
             if (AvailableTimeTo.Any())
                 SelectedTimeTo = AvailableTimeTo.Last();
         }
@@ -316,12 +307,9 @@ namespace WpfApp1.ViewModels
         }
         private void BuildChartSeries()
         {
-            // Серия температуры с правильным Mapping
             var tempSeries = new LineSeries<LineChartModel>
             {
                 Values = ChartData,
-
-                // Правильный синтаксис: один Mapping, возвращающий (X, Y)
                 Mapping = (point, index) => new Coordinate(point.Minutes, point.Temperature),
 
                 Name = "Температура, °C",
@@ -331,19 +319,17 @@ namespace WpfApp1.ViewModels
                 GeometryStroke = new SolidColorPaint(SKColors.Red) { StrokeThickness = 2 }
             };
 
-            // Если нужна вторая серия (скорость)
             var speedSeries = new LineSeries<LineChartModel>
             {
                 Values = ChartData,
                 Mapping = (point, index) => new Coordinate(point.Minutes, point.Speed ?? 0),
                 Name = "Скорость, об/мин",
                 Stroke = new SolidColorPaint(SKColors.Blue) { StrokeThickness = 2 },
-                IsVisibleAtLegend = false // Скрыта по умолчанию
+                IsVisibleAtLegend = false
             };
 
             TemperatureSeries = new ISeries[] { tempSeries, speedSeries };
 
-            // Ось X: используем старую синтаксическую форму для совместимости
             XAxis = new Axis[]
             {
                 new Axis
@@ -355,7 +341,6 @@ namespace WpfApp1.ViewModels
                 }
             };
 
-            // Ось Y
             YAxis = new Axis[]
             {
                 new Axis
@@ -368,7 +353,6 @@ namespace WpfApp1.ViewModels
                 }
             };
 
-            // Уведомляем интерфейс
             OnPropertyChanged(nameof(TemperatureSeries));
             OnPropertyChanged(nameof(XAxis));
             OnPropertyChanged(nameof(YAxis));
