@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPF2.Models
 {
-    public class ItemExtractorModel : NotifyModel
+    public class ItemExtractor : Notifier
     {
         private string _fullName;
         private string _clearName;

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WPF2.Models
 {
-    public abstract class NotifyModel : INotifyPropertyChanged
+    public abstract class Notifier : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
